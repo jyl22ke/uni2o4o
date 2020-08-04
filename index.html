@@ -3,29 +3,33 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="./_images_data.js"></script>
   <title>Document</title>
-
   <style media="screen">
-    * {box-sizing:border-box;margin:0px;padding:0px;}
-    body,html{background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;height:100%;}
-    button{border:1px solid gray;border-radius:5px;padding:2px; color:black; margin: 5px; font-size:16px; font-weight:bold; background-color:skyblue;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);}
+    * {box-sizing:border-box;margin:0px;padding:0px;list-style:none;}
+    body,html{-webkit-text-size-adjust:none;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;height:100%;}
+    button{border:1px solid gray;border-radius:5px;padding:2px; color:black; margin: 5px; font-size:16px; font-weight:bold; background-color:skyblue;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3), 0 6px 20px 0 rgba(0,0,0,0.3);}
     button:hover{color:red;background-color:lightgray;cursor:pointer;}
     #header{min-height:10%;padding-top:50px;}
     #header h1{text-align:center;}
-    #header span{margin-left:60px;}
-    #canvas{text-align:center;}
-
-    .imga{width:180px;height:120px;cursor:pointer;margin:10px;margin-bottom:0;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);}
-    .thumb{display:inline-block;text-align:center;margin:5px;}
-
+    #header span{margin-left:50px;}
+    #content,#canvas{display:flex;flex-wrap:wrap;justify-content:center;}
+    #canvas{max-width:960px;}
     #footer{text-align:center;min-height:15%;margin-top:50px;}
-    #menubar{position:absolute;top:1px;z-index:10;background:#0033cc;left:0px;width:100%;height:40px;color:white;}
-    #menubar>ul{display:inline-block;width:99%;padding-bottom:0px;list-style:none;}
-    #menubar>ul li{float:left;list-style:none;height:35px;line-height:36px;padding:0px;margin-left:1px;font-weight:bold;width:auto;text-align:center;font-size:14px;}
+
+    #dumm{height=0;}
+    h1{text-shadow: 4px 4px 4px gray;}
+  	.imga,.imgb{max-width:180px;max-height:180px;cursor:pointer;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);}
+    .thumb1{width:180px;float:left;text-align:center;margin:5px;margin-top:20px;}
+    .thumb2{width:150px;text-align:center;margin:5px;margin-top:20px;}
+
+    #menubar{position:absolute;top:1px;display:flex;background:#0033cc;left:0px;width:100%;height:40px;color:white;}
+    #menubar>span>img{height:35px;padding-top:5px;}
+    #menubar>ul{display:flex;justify-content:center;width:99%;padding-bottom:0px;}
+    #menubar:after {content:'';display:block;clear:both;height=0;visibility:hidden;}
+    #menubar>ul li{list-style:none;overflow:hidden;height:35px;line-height:36px;padding:0px;margin-left:1px;font-weight:bold;width:auto;text-align:center;font-size:14px;}
     #menubar>ul li:link{height:40px;overflow:hidden;color:white;text-decoration:none;text-align:center;}
     #menubar>ul li:visited{color:#9966ff;}
     #menubar>ul li:hover{color:#ee9999;cursor:pointer;}
@@ -40,276 +44,257 @@
     .slid6{position:absolute;text-align:center;animation:myslide 24s ease infinite;}
 
     @keyframes myslide {
-      0% {width:10px;height:10px;opacity:0.0;transform:translate(520px,100px);}
-      16% {width:90px;height:60px;opacity:0.3;transform:translate(1335px,100px);}
-      33% {width:210px;height:140px;opacity:0.8;transform:translate(1365px,140px);}
-      50% {width:1024px;height:683px;opacity:1.0;transform:translate(290px,60px);}
-      67% {width:210px;height:140px;opacity:0.8;transform:translate(30px,140px);}
-      84% {width:90px;height:60px;opacity:0.3;transform:translate(180px,100px);}
-      100% {width:10px;height:10px;opacity:0.0;transform:translate(520px,100px);}
-    }
+      0% {width:6px;height:6px;opacity:0.0;transform:translate(510px,64px);}
+      16% {width:58px;height:38px;opacity:0.3;transform:translate(853px,64px);}
+      33% {width:134px;height:90px;opacity:0.8;transform:translate(872px,150px);}
+      50% {width:656px;height:437px;opacity:1.0;transform:translate(185px,40px);}
+      67% {width:134px;height:90px;opacity:0.8;transform:translate(20px,150px);}
+      84% {width:58px;height:38px;opacity:0.3;transform:translate(115px,64px);}
+      100% {width:6px;height:6px;opacity:0.0;transform:translate(510px,64px);}
+  	}
 
-    #big {position:fixed;z-index:13;width:auto;max-width:99%;max-height:98%;left:10px;top:10px;}
-    .imgb,.imgc {max-width:150px;max-height:150px;cursor:pointer;}
+    #big {position:fixed;z-index:13;width:auto;max-width:100%;max-height:98%;left:10px;top:10px;}
+    .imgc {max-width:150px;max-height:150px;cursor:pointer;}
     .imgc:hover {opacity:0.7;transform:translatey(-5px) rotate(5deg);}
+    .mask1,.mask2{position:fixed;z-index:13;background:black;display:none;left:0px;top:0px;width:100%;height:100%;}
 
-    .mask,.canva1 {position:fixed;z-index:13;background:black;display:none;left:0px;top:0px;width:100%;height:100%;}
-    .secti {width:960px;height:100%;margin-bottom:300px;background:none;position:relative;top:0px;}
-
-    .col-1 {width:8.33%}
-    .col-2 {width:16.66%}
-    .col-3 {width:25%}
-    .col-4 {width:33.33%}
-    .col-5 {width:41.66%}
-    .col-6 {width:50%}
-    .col-7 {width:58.33%}
-    .col-8 {width:66.66%}
-    .col-9 {width:75%}
-    .col-10 {width:83.33%}
-    .col-11 {width:91.66%}
-    .col-12 {width:100%}
-
-    [class*="col-"] {float:left;padding:10px;}
-    /*스크린 해상도가 768px이하이면*/
-    @media screen and (max-width:768px) {
-      /*해상도가 768px 이하이면 모든 col-을 100%로 바꾸기*/
-      [class*="col-"] {width:100%;}
-    }
   </style>
-</head>
-
-<body>
-  <div id="header" class="hdg"></div>
-
-  <div id="main" class="col-12">
-    <div class="col-2"></div>
-    <div id="canvas" class="col-8">
-      <div class="canva1 col-8"></div>
-    </div>
-    <div class="col-2"></div>
-  </div>
-
-  <div id="footer" class="col-12"></div>
 
   <script type="text/javascript">
 
-    var htxt1 = ''; var htxt2 = '';
-    var ftxt1 = ''; var ftxt2 = '';
+  var htxt1 = ''; var htxt2 = '';
+  var ftxt1 = ''; var ftxt2 = '';
+  var seq = ''; var sez = ''; var slz = ''; var num = 0;
 
-    function hdtitl() {
-      $('#header').empty();
-      $('#header').append(htxt1);
-      $('#header').append(htxt2);
-    };
+  function hdtitl() {
+    $('#header').empty();
+    $('#header').append(htxt1);
+    $('#header').append(htxt2);
+  };
 
-    function footxt() {
+  function footxt() {
+    $('#footer').empty();
+    $('#footer').append(ftxt1);
+    $('#footer').append(ftxt2);
+  };
+
+  //*=========== Main (tour)화면 영역 tourlist ============
+  function tourlist() {
+    $(function() {
+
+      htxt1 = '<h1 class="hd">해외여행 &nbsp; 풍경사진 &nbsp; 모음</h1>';
+      htxt2 = '<span><button onclick="window.close();">창닫기</button></span>';
+      hdtitl();
+
+      var ttxt = new Array; var tsum = '';
+      var i = 0; var j = 0;
+      for (i = 0; i < tour.length; i++) {
+        j = j + 1;
+        ttxt.push('<div class="thumb1"><img class="imga" src="' + tour[i][3] + '" title="' + i + '" alt="' + tour[i][0] + '"><h4>' + tour[i][1] + '</h4><h5>' + tour[i][2] + '</h5></div>');
+      };
+      for (i = 0; i < ttxt.length; i++) {
+        tsum = tsum + ttxt[i]
+      };
+      $('#canvas').empty();
+      $('#canvas').append([tsum]);
+
       $('#footer').empty();
-      $('#footer').append(ftxt1);
-      $('#footer').append(ftxt2);
-    };
+    });
+  };
+  tourlist();
 
-    //*=========== Main (tour)화면 영역 tourlist ============
-    function tourlist() {
-      $(function() {
+  //*<.imga>영역을 클릭하면 함수실행
+  $(document).on("click", ".imga", function() {
+    seq = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+    for (i = 0; i < tour.length; i++) {
+      if (tour[i][0] == seq) { num = [i] }
+    }
+    citylist();
+  });
 
-        htxt1 = '<h1>해외여행 &nbsp; 풍경사진 &nbsp; 모음</h1>';
-        htxt2 = '<span><button onclick="win.close();">창닫기</button></span>';
+  function rtncity(){
+    $(function() {
+      sez = "";
+      citylist();
+    });
+  };
 
+  //*=========== 여행도시 (city)화면 영역 citylist ============
+  function citylist() {
+    $(function() {
+        var ctxt = new Array;
+        var csum = "";
+
+        htxt1 = '<h1 class="hd">' + tour[num][4] + '</h1>';
+        htxt2 = '<span><button onclick="tourlist();" title="Main"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16" border=0 align=top></button></span>';
         hdtitl();
 
-        var ttxt = new Array; var tsum = '';
-        var i = 0; var j = 0;
-        for (i = 0; i < tour.length; i++) {
-          j = j + 1;
-          ttxt.push('<div class="thumb"><img class="imga" src="' + tour[i][3] + '" title="' + i + '" alt="' + tour[i][0] + '"><h4>' + tour[i][1] + '</h4><h5>' + tour[i][2] + '</h5></div>');
+        for (var i = 0; i < city.length; i++) {
+          if (city[i][0].indexOf(seq) != -1) {
+            ctxt.push('<div class="thumb1"><img class="imgb" src="' + city[i][2] + '" title="' + city[i][1] + '" alt="' + city[i][0] + '"><h5>' + city[i][1] + '</h5></div>');
+          };
         };
-        for (i = 0; i < ttxt.length; i++) {
-          tsum = tsum + ttxt[i]
+        for (i = 0; i < ctxt.length; i++) {
+          csum = csum + ctxt[i]
         };
-        $('#canvas').empty();
-        $('#canvas').append([tsum]);
+
+        $("#canvas").empty();
+        $('#canvas').append([csum]);
+
+        ftxt1 = '<h2>PHOTOS &nbsp;&nbsp;of &nbsp;&nbsp;' + tour[num][5] + '</h2>';
+        ftxt2 = tour[num][6];
+        footxt();
       });
-    };
-    tourlist();
+  };
 
-    //*=========== 여행도시 (city)화면 영역 citylist ============
-    function citylist() {
-      $(function() {
+  //*=========== 이미지 썸네일 (images)화면 메뉴바(citylist) ============
+  function mnubar() {
+    $(function() {
 
-        //*<img>영역을 클릭하면 함수실행
-        $(document).on("click", ".imga", function() {
-          var seq = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
-          var num = 0;
-          for (i = 0; i < tour.length; i++) {
-            if (tour[i][0] == seq) {
-              num = [i]
-            }
-          }
-          var ctxt = new Array;
-          var csum = "";
+      //*<.imgb>영역을 클릭하면 함수실행
+      $(document).on("click", ".imgb", function() {
+        var mtxt = new Array;
+        var msum = "";
+        var tmtxt = new Array;
+        var tmsum = "";
+        var smtxt = new Array;
+        var smsum = "";
 
-          htxt1 = '<h1>' + tour[num][4] + '</h1>';
-          htxt2 = '<span><button onclick="tourlist();" title="Main"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16" border=0 align=top></button></span>';
-          hdtitl();
-          var n = 0;
-          for (var i = 0; i < city.length; i++) {
-            if (city[i][0].indexOf(seq) != -1) {
-              n = n + 1;
-            };
+        sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
+        slz = sez;
+
+        mtxt.push('<div id="menubar"><span onclick="rtncity();"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16"></span><ul>');
+
+        seq = sez.substring(0, 1);
+        for (i = 0; i < city.length; i++) {
+          if (city[i][0].substring(0, 1) == seq) {
+              mtxt.push('<li class="imgb" alt="' + city[i][0] + '">' + city[i][1] + '</li> &nbsp; ');
           };
+        };
+        mtxt.push('</ul></div>');
+        for (i = 0; i < mtxt.length; i++) {msum = msum + mtxt[i]};
+        htxt1 = msum;
+        for (i = 0; i < city.length; i++) {
+          if (city[i][0] == sez) {htxt2 = '<div class="head"><br><h1 class="hd">' + city[i][1] + '</h1><span><button onclick="slidshw();">연속 슬라이드</button></span></div>';};
+        };
+        hdtitl();
 
-          if (n > 5) {
-            j = Math.round(n / 2);
-          } else {
-            j = n;
-          }
-
-          var m = 0;
-          for (var i = 0; i < city.length; i++) {
-            if (city[i][0].indexOf(seq) != -1) {
-              m = m + 1;
-              ctxt.push('<div class="thumb"><img class="imgb" src="' + city[i][2] + '" title="' + city[i][1] + '" alt="' + city[i][0] + '"><h5>' + city[i][1] + '</h5></div>');
-            };
+        //*============== 이미지 썸네일 (images)화면 영역  ===============
+        for (i = 0; i < imges.length; i++) {
+          if (imges[i][2] == sez) {
+            tmtxt.push('<div class="thumb2 imgc"><img class="imgc" src="' + imges[i][0] + '"/></div>');
           };
-          for (i = 0; i < ctxt.length; i++) {
-            csum = csum + ctxt[i]
-          };
-
-          $("#canvas").empty();
-          $('#canvas').append([csum]);
-          ftxt1 = '<h2>PHOTOS &nbsp;&nbsp;of &nbsp;&nbsp;' + tour[num][5] + '</h2>';
-          ftxt2 = tour[num][6];
-          footxt();
-        });
-      });
-    };
-    citylist();
-
-    //*=========== 이미지 썸네일 (images)화면 메뉴바(citylist) ============
-    var sez = ""; var slz = "";
-
-    function mnubar() {
-      $(function() {
-
-        //*<img>영역을 클릭하면 함수실행
-        $(document).on("click", ".imgb", function() {
-          var mtxt = new Array;
-          var msum = "";
-          var tmtxt = new Array;
-          var tmsum = "";
-
-          sez = $(this).attr('alt'); //*변수생성하여 클릭한 이미지주소를 대입
-          slz = sez;
-          mtxt.push('<div id="menubar"><ul><li class="imga" alt="' + sez.substring(0, 1) + '"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16" height=30px></li>');
-
-          var sel = sez.substring(0, 1);
-          for (i = 0; i < city.length; i++) {
-            if (city[i][0].substring(0, 1) == sel) {
-                mtxt.push('<li class="imgb" alt="' + city[i][0] + '">' + city[i][1].substring(0, 3) + '｜</li>');
-            };
-          };
-          mtxt.push('</ul></div>');
-          for (i = 0; i < mtxt.length; i++) {msum = msum + mtxt[i]};
-          htxt1 = msum;
-          for (i = 0; i < city.length; i++) {
-            if (city[i][0] == sez) {htxt2 = '<div class="head"><br><h1>' + city[i][1] + '</h1><span><button onclick="slider();">연속 슬라이드</button></span></div>';};
-          };
-          hdtitl();
-
-          //*============== 이미지 썸네일 (images)화면 영역  ===============
-          for (i = 0; i < imges.length; i++) {
-            if (imges[i][2] == sez) {
-              tmtxt.push('<div class="thumb imgc"><img class="imgc" src="' + imges[i][0] + '"/></div>');
-            };
-          };
-          tmtxt.push('<div class="mask"><img src="" id="big"></div>');
-          tmtxt.push('<div class="canva1"><div class="slid1"><img id="image1"></div><div class="slid2"><img id="image2"></div><div class="slid3"><img id="image3"></div><div class="slid4"><img id="image4"></div><div class="slid5"><img id="image5"></div><div class="slid6"><img id="image6"></div></div>');
-
-          //*================== BIG IMAGE 영역 ===========================
-          $(function() {
-            //*<img>영역을 클릭하면 함수실행
-            $("img").click(function() {
-              var bigImg = $(this).attr("src"); //*변수생성하여 클릭한 이미지주소를 대입
-              $(".mask").fadeIn("slow"); //*속도:slow,fast,숫자
-              $("#big").attr({"src": bigImg}).fadeIn("slow"); //*속도:slow,fast,숫자
-            });
-
-            //*아이디값이 big_img인 요소를 클릭하면 빠르게 페이드아웃
-            $("#big").click(function() {
-              $(this).fadeOut("fast"); //*속도:slow,fast,숫자
-              $(".mask").fadeOut("fast"); //*속도:slow,fast,숫자
-            });
+        };
+        //*================== BIG IMAGE 영역 ===========================
+        $(function() {
+          //*<.imgc>영역을 클릭하면 함수실행
+          $(".imgc").click(function() {
+            var bigImg = $(this).attr("src"); //*변수생성하여 클릭한 이미지주소를 대입
+            $(".mask1").show();
+            $("#big").attr({"src": bigImg}).show();
           });
-          //*------------------ BIG IMAGE 영역 end -----------------------
-          for (i = 0; i < tmtxt.length; i++) {
-            tmsum = tmsum + tmtxt[i]
-          };
-          $("#canvas").empty();
-          $('#canvas').append([tmsum]);
+
+          //*아이디값이 big_img인 요소를 클릭하면 빠르게 페이드아웃
+          $("#big").click(function() {
+            $(this).hide();
+            $(".mask1").hide();
+          });
         });
+        //*------------------ BIG IMAGE 영역 end -----------------------
+        for (i = 0; i < tmtxt.length; i++) {
+          tmsum = tmsum + tmtxt[i]
+        };
+        $("#canvas").empty();
+        $('#canvas').append([tmsum]);
+
+        smtxt.push('<div id="mask1" class="mask1"><img src="" id="big"></div>');
+        smtxt.push('<div id="mask2" class="mask2"><div class="slid1"><img id="image1"></div><div class="slid2"><img id="image2"></div><div class="slid3"><img id="image3"></div><div class="slid4"><img id="image4"></div><div class="slid5"><img id="image5"></div><div class="slid6"><img id="image6"></div></div>');
+        for (i = 0; i < smtxt.length; i++) {
+          smsum = smsum + smtxt[i]
+        };
+        $("#dumm").empty();
+        $('#dumm').append([smsum]);
       });
-    };
-    mnubar();
-    //*----------- 이미지 썸네일 (images)화면 메뉴바(citylist) end --------
-    //*============== 이미지 슬라이드 (slider)화면 영역  ===============
-    function slider() {
-      $(function() {
-        $(".canva1").fadeIn("slow"); //*속도:slow,fast,숫자
+    });
+  };
+  mnubar();
+  //*----------- 이미지 썸네일 (images)화면 메뉴바(citylist) end --------
+  //*============== 이미지 슬라이드 (slider)화면 영역  ===============
+  function slidshw() {
+      $(".mask2").show();
+      slider();
 
-        $(".canva1").click(function() {
-          $(".canva1").fadeOut("fast");
-        });
-
-        //변수를 선언합니다.
-        var count = 0;
-        var cnt = 0;
-        var image1 = document.getElementById('image1');
-        var image2 = document.getElementById('image2');
-        var image3 = document.getElementById('image3');
-        var image4 = document.getElementById('image4');
-        var image5 = document.getElementById('image5');
-        var image6 = document.getElementById('image6');
-
-        //========== 배열 영역 (frames) ======================
-        var frames = $.map(imges, function(element, index) {
-          if (element[2] === slz) {
-            return [element[0]]
-          }
-        });
-
-        // 맨앞에 붙여넣기.... 마지막==> 첫 이미지 넘어갈때 오류 방지용 임.
-        frames.unshift(' ');
-        //---------- 배열 영역 (frames) end ------------------
-
-        //====== 초기 슬라이드의 위치 지정 (랜덤으로)
-        var randomNumber = Math.round(Math.random() * frames.length);
-        if (randomNumber < 7) { randomNumber = 7 };
-
-        image1.src = frames[randomNumber - 6];
-        image2.src = frames[randomNumber - 5];
-        image3.src = frames[randomNumber - 4];
-        image4.src = frames[randomNumber - 3];
-        image5.src = frames[randomNumber - 2];
-        image6.src = frames[randomNumber - 1];
-
-        count = randomNumber - 1;
-
-        //===== 타이머 반복을 사용합니다.
-        setInterval(function() {
-          count = count + 1;
-          cnt = cnt + 1;
-          if (cnt == 1) {image1.src = frames[count];}
-          if (cnt == 2) {image2.src = frames[count];}
-          if (cnt == 3) {image3.src = frames[count];}
-          if (cnt == 4) {image4.src = frames[count];}
-          if (cnt == 5) {image5.src = frames[count];}
-          if (cnt == 6) {image6.src = frames[count];cnt = 0;}
-
-          if (count == frames.length - 1) {count = 0;}
-        }, 4000);
+      $(".mask2").click(function() {
+        $(".mask2").hide();
       });
-    };
+  };
 
+  function slider() {
+    $(function() {
+
+      //변수를 선언합니다.
+      var count = 0;
+      var cnt = 0;
+      var image1 = document.getElementById('image1');
+      var image2 = document.getElementById('image2');
+      var image3 = document.getElementById('image3');
+      var image4 = document.getElementById('image4');
+      var image5 = document.getElementById('image5');
+      var image6 = document.getElementById('image6');
+
+      //========== 배열 영역 (frames) ======================
+      var frames = $.map(imges, function(element, index) {
+        if (element[2] === slz) {
+          return [element[0]]
+        }
+      });
+
+      // 맨앞에 붙여넣기.... 마지막==> 첫 이미지 넘어갈때 오류 방지용 임.
+      frames.unshift(' ');
+      //---------- 배열 영역 (frames) end ------------------
+
+      //====== 초기 슬라이드의 위치 지정 (랜덤으로)
+      var randomNumber = Math.round(Math.random() * frames.length);
+      if (randomNumber < 7) { randomNumber = 7 };
+
+      image1.src = frames[randomNumber - 6];
+      image2.src = frames[randomNumber - 5];
+      image3.src = frames[randomNumber - 4];
+      image4.src = frames[randomNumber - 3];
+      image5.src = frames[randomNumber - 2];
+      image6.src = frames[randomNumber - 1];
+
+      count = randomNumber - 1;
+
+      //===== 타이머 반복을 사용합니다.
+      setInterval(function() {
+        count = count + 1;
+        cnt = cnt + 1;
+        if (cnt == 1) {image1.src = frames[count];}
+        if (cnt == 2) {image2.src = frames[count];}
+        if (cnt == 3) {image3.src = frames[count];}
+        if (cnt == 4) {image4.src = frames[count];}
+        if (cnt == 5) {image5.src = frames[count];}
+        if (cnt == 6) {image6.src = frames[count];cnt = 0;}
+
+        if (count == frames.length - 1) {count = 0;}
+      }, 4000);
+    });
+  };
+
+  </script>
+</head>
+<body>
+<div class="contents">
+  <div id="dumm"></div>
+  <div id="header"></div>
+  <div id="content">
+    <div id="canvas"></div>
+  </div>
+  <div id="footer"></div>
+</div>
+
+<script type="text/javascript">
 var tour = [
 ["A", "서유럽 5개국", "2000.10.25 ~ 11.03", "http://cfile210.uf.daum.net/image/1460C9194A1B2BFB10422E", "유럽 5개국 일주여행 풍경사진", "Five countries in the west of Europe", "( Italia, Austria, Swiss, France, England and Deutschland )"],
 ["B", "장가계", "2005.06.21 ~ 06.25", "http://cfile224.uf.daum.net/image/1719D8104B15FD2A912FC9", "중국 호남성 장가계 풍경사진", "Zhangjiajie", "in the north-west of Hunan Province, China"],
