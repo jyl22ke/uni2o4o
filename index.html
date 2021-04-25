@@ -1170,7 +1170,7 @@ function shijoinit(){
   })
 }
 
-function tagParsing(obj, yminit){
+function tagParsing(obj, shijoinit){
   var len = obj.length;
   var tag = '';
   for(i=0; i<obj.length; i++){
@@ -1183,7 +1183,7 @@ function tagParsing(obj, yminit){
 
 //================ 시조놀이 감상 display ==========
 	$(document).on("click", ".shi", 
-	async function(){
+	function(){
 		$(".container2").hide();
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
@@ -1192,19 +1192,8 @@ function tagParsing(obj, yminit){
 		$('#canv').empty();
 		$('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="retn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
 
-
-
-		await sh_disp(num);
 	});   
 
- function sh_disp(num){
-	$(function () {
-		selm = ytbm[num][1];
-	    h = '280';   w = '500';
-
-
-	});
-};
 
    //--■■■■■■■■■■■■■■■■■해외여행사진 __ostour■■■■■■■■■■■■■■■■■■
   var htxt1 = ''; var htxt2 = '';
