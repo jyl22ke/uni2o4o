@@ -262,8 +262,8 @@
 
 	<div class="title report">
 		<li id="sh_no" class="sh_no title">NO</li>
+		<li id="sh_subj" class="sh_subj title">제목</li>
 		<li id="sh_date" class="sh_date title">일시</li>
-		<li id="subj" class="subj title">제목</li>
 	</div>
 	<div id="sh_data" class="sh_data sh_report">
 	</div>
@@ -485,7 +485,7 @@ function fread(fn){
 
 function vwpriv(){
 $(function (){
-	var ccds = '<div class="combo"><select id="combo"><option value="-1" selected="selected">년도 선택</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2012">2012~14</option><option value="2007">2007~11</option></select></div>';
+	var ccds = '<div class="combo"><select id="combo"><option value="-1" selected="selected">년도 선택</option><option value="2021">2021<option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2012">2012~14</option><option value="2007">2007~11</option></select></div>';
 	$('.maing').append(ccds);
 
 	$(function(){
@@ -582,7 +582,7 @@ function yms(){
 	});
 };
 
-  //*== ●●●●●●●● yms();      ----음악 감상 ----start==========
+  //*== ●●●●●●●● shijo();      ----시조놀이 감상 ----start==========
 function shijo(){
 	$(function (){
 		$(".container").hide();
