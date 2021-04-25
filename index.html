@@ -1113,10 +1113,10 @@ function yminit(){
       objSort(ytbm, [0]);
       tagParsing(ytbm, false);
     }else if(titleName == "subj"){
-      objSort(ytbm, [4]);
+      objSort(ytbm, [3]);
       tagParsing(ytbm, false);
     }else if(titleName == "artst"){
-      objSort(ytbm, [1]);
+      objSort(ytbm, [4]);
       tagParsing(ytbm, false);
     }
   })
@@ -1143,8 +1143,8 @@ function tagParsing(obj, yminit){
   var tag = '';
   for(i=0; i<obj.length; i++){
     tag += "<li class='m_no mus' title='"+ i +"'>"+obj[i][0]+"</li>"
-    +"<li class='subj mus' title='"+ i +"'>"+obj[i][4]+"</li>"
-    +"<li class='artst'>"+obj[i][1]+"</li>";
+    +"<li class='subj mus' title='"+ i +"'>"+obj[i][3]+"</li>"
+    +"<li class='artst'>"+obj[i][4]+"</li>";
   }
   document.getElementById("data").innerHTML = tag;
 };
@@ -1187,8 +1187,6 @@ function tagParsing(obj, shijoinit){
 		$(".container2").hide();
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
-		title = shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1];
-		sh_txt = ytbm[num][4];
 		$('#canv').empty();
 		$('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="retn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
 
