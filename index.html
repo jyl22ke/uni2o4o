@@ -149,8 +149,8 @@
 
  /*------------  시조놀이 감상 ----shijo List 용 css------------ */
 	.container2{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;}
- 	.sh_report{display:grid;	grid-template-columns: 1fr 3fr 4fr;	grid-gap:1px;	border:1px solid gray;}
-	.shi,.sh_date{background:#e0ebeb;font-size:0.8em;}
+ 	.sh_report{display:grid;	grid-template-columns: 1fr 3fr 3fr 5fr;	grid-gap:1px;	border:1px solid gray;}
+	.shi,.sh_date{background:#e0ebeb;font-size:1.0em;}
 	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 /*	.data1{border-top:0px;}*/
 	.sh_no{text-align:center;}
@@ -264,6 +264,7 @@
 		<li id="sh_no" class="sh_no sh_title">NO</li>
 		<li id="sh_subj" class="sh_subj sh_title">제목</li>
 		<li id="sh_date" class="sh_date sh_title">일시</li>
+		<li id="sh_txt" class="sh_txt sh_title">내용</li>
 	</div>
 	<div id="sh_data" class="sh_data sh_report">
 	</div>
@@ -1166,6 +1167,9 @@ function shijoinit(){
     }else if(titleName == "sh_date"){
       objSort(shijo, [1]);
       tagParsing(shijo, false);
+    }else if(titleName == "sh_txt"){
+      objSort(shijo, [4]);
+      tagParsing(shijo, false);
     }
   })
 }
@@ -1176,7 +1180,7 @@ function tagParsing(obj, shijoinit){
   for(i=0; i<obj.length; i++){
     tag += "<li class='sh_no shi' title='"+ i +"'>"+obj[i][0]+"</li>"
     +"<li class='sh_subj shi' title='"+ i +"'>"+obj[i][2]+"</li>"
-    +"<li class='sh_date'>"+obj[i][1]+"</li>";
+    +"<li class='sh_date'>"+obj[i][1]+"</li>"+"<li class='sh_txt'>"+obj[i][4]+"</li>";
   }
   document.getElementById("sh_data").innerHTML = tag;
 };
