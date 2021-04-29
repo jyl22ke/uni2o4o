@@ -550,7 +550,8 @@ $(function (){
 
 //================== 이미지 & description 화면================
   var telists = $.map(trimgs, function(element, index) {
-   	  if (element[5] == c_cd) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_하늘"
+//   	  if (element[5] == c_cd) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_하늘"
+   	  if (element[5].includes(c_cd)) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_하늘"
   	 	return [element]
   	  };
   });
