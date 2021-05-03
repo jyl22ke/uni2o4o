@@ -1184,7 +1184,7 @@ function tagParsing(obj, shijoinit){
   for(i=0; i<obj.length; i++){
     tag += "<li class='sh_no shi' title='"+ i +"'>"+obj[i][0]+"</li>"
     +"<li class='sh_subj shi' title='"+ i +"'>"+obj[i][2]+"</li>"
-    +"<li class='sh_date shi'>"+obj[i][1]+"</li>"+"<li class='sh_txt shi'>"+obj[i][4]+"</li>";
+    +"<li class='sh_date'>"+obj[i][1]+"</li>"+"<li class='sh_txt shi'>"+obj[i][4]+"</li>";
   }
   document.getElementById("sh_data").innerHTML = tag;
 };
