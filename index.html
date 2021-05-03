@@ -1160,12 +1160,12 @@ function shijoinit(){
   tagParsing(shijo, true);
 
   //click Evt 정렬
-  $(".title").click(function(){
+  $(".sh_title").click(function(){
     var titleName = this.id;
     if(titleName == "sh_no"){
       objSort(shijo, [0]);
       tagParsing(shijo, false);
-    }else if(titleName == "subj"){
+    }else if(titleName == "sh_subj"){
       objSort(shijo, [2]);
       tagParsing(shijo, false);
     }else if(titleName == "sh_date"){
