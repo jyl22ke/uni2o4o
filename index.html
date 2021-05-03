@@ -154,7 +154,7 @@
 	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 /*	.data1{border-top:0px;}*/
 	.sh_no{text-align:center;}
-	.sh_title li:hover, .shi:hover, button:hover{color:red;cursor:pointer}
+	.sh_no:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 /*	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
 
 	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
@@ -1184,7 +1184,7 @@ function tagParsing(obj, shijoinit){
   for(i=0; i<obj.length; i++){
     tag += "<li class='sh_no shi' title='"+ i +"'>"+obj[i][0]+"</li>"
     +"<li class='sh_subj shi' title='"+ i +"'>"+obj[i][2]+"</li>"
-    +"<li class='sh_date'>"+obj[i][1]+"</li>"+"<li class='sh_txt'>"+obj[i][4]+"</li>";
+    +"<li class='sh_date shi'>"+obj[i][1]+"</li>"+"<li class='sh_txt shi'>"+obj[i][4]+"</li>";
   }
   document.getElementById("sh_data").innerHTML = tag;
 };
