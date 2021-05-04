@@ -793,7 +793,9 @@ function shrtn(){		//-- 시조놀이 감상에서 RETURN 할때
   }
  
   //========== 정렬  ======================
-  function objSort(obj, sort){
+
+/*		
+function objSort(obj, sort){
     if(orderBy == "asc"){ //오름차순 정렬
       orderBy = "desc";
       obj.sort(function(a, b){
@@ -807,7 +809,7 @@ function shrtn(){		//-- 시조놀이 감상에서 RETURN 할때
         else if (a[sort] < b[sort]) return 1;
       });
     }
-  }
+  }*/
 		
   function tagParsing(obj, init){
     var tag = "";
@@ -1117,7 +1119,7 @@ function yminit(){
   })
 }
  
-/*function objSort(obj, sort){
+function objSort(obj, sort){
   if(orderBy == "asc"){ //오름차순 정렬
     orderBy = "desc";
     obj.sort(function(a, b){
@@ -1131,7 +1133,7 @@ function yminit(){
       else if (a[sort] < b[sort]) return 1;
     });
   }
-}*/
+}
  
 function tagParsing(objm, yminit){
   var len = objm.length;
