@@ -131,13 +131,13 @@
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
 	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;}
-	.report{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray; font-size:0.8em;}
+	.m_report{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray; font-size:0.8em;}
 	.mus,.artst{background:#e0ebeb;font-size:0.8em;}
-	.title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
-	.data1{border-top:0px;}
+	.m_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
+	.m_data{border-top:0px;}
 	.m_no{text-align:center;}
 	.subj,.artst{padding-left:10px;}
-	.title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
+	.m_title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
 	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
 
 	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
@@ -245,12 +245,12 @@
 <div class="container1">
 		<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button>
 
-	<div class="title report">
+	<div class="m_title m_report">
 		<li id="m_no" class="m_no title">NO</li>
 		<li id="subj" class="subj title">제목</li>
 		<li id="artst" class="artst title">가수</li>
 	</div>
-	<div id="data" class="data report">
+	<div id="m_data" class="m_data m_report">
 	</div>
 </div>
 
@@ -1110,7 +1110,7 @@ function yminit(){
   tagParsing(ytbm, true);
 
   //click Evt 정렬
-  $(".title").click(function(){
+  $(".m_title").click(function(){
     var titleName = this.id;
     if(titleName == "m_no"){
       objSort(ytbm, [0]);
@@ -1141,15 +1141,15 @@ function objSort(obj, sort){
   }
 }
  
-function tagParsing(obj, yminit){
-  var len = obj.length;
-  var tag = '';
-  for(i=0; i<obj.length; i++){
-    tag += "<li class='m_no mus' title='"+ i +"'>"+obj[i][0]+"</li>"
-    +"<li class='subj mus' title='"+ i +"'>"+obj[i][3]+"</li>"
-    +"<li class='artst'>"+obj[i][4]+"</li>";
+function tagParsing(objm, yminit){
+  var len = objm.length;
+  var mtag = '';
+  for(i=0; i<objm.length; i++){
+    mtag += "<li class='m_no mus' title='"+ i +"'>"+objm[i][0]+"</li>"
+    +"<li class='subj mus' title='"+ i +"'>"+objm[i][3]+"</li>"
+    +"<li class='artst'>"+objm[i][4]+"</li>";
   }
-  document.getElementById("data").innerHTML = tag;
+  document.getElementById("m_data").innerHTML = mtag;
 };
 
 //================ 시조놀이 List 정렬================
