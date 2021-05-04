@@ -154,9 +154,8 @@
 	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 /*	.data1{border-top:0px;}*/
 	.sh_no{text-align:center;}
-	.sh_no:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
+	.sh_title:hover, .sh_no:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 /*	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
-
 	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
 		border-spacing:11px;padding:1px;background:#ffe6ff;width:100%;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
 	.wd{color:blue;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;}
@@ -233,8 +232,8 @@
 					<div class="mnu flower" onclick="bran(7);">7꽃_벌</div>
 					<div class="mnu bird" onclick="bran(8);">8새_하늘</div>
 					<div class="mnu bl-a">5</div>
-					<div class="mnu ostr" onclick="bran(0)">9해외 여행사진</div>
-					<div class="mnu yms" onclick="bran(9);">0음악감상</div>
+					<div class="mnu ostr" onclick="bran(9)">9해외 여행사진</div>
+					<div class="mnu yms" onclick="bran(0);">0음악감상</div>
 					<div class="mnu right"></div>
 				</div>
 			</div>
@@ -474,8 +473,8 @@ function fread(fn){
 			}else	{if (ctg == "6"){c_cd0 = "";c_cd = "일출일몰"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "7"){c_cd0 = "";c_cd = "꽃_벌"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "8"){c_cd0 = "";c_cd = "새_하늘"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "0"){tourlist();
-			}else	{if (ctg == "9"){ymsf();}
+			}else	{if (ctg == "9"){tourlist();
+			}else	{if (ctg == "0"){yms();}
 			}}}}}}}}}
 		});
 	};
@@ -572,9 +571,8 @@ $(function (){
 });
 };
 
-
   //*== ●●●●●●●● yms();      ----음악 감상 ----start==========
-function ymsf(){
+function yms(){
 	$(function (){
 		$(".container").hide();
 		$(".container1").show();
@@ -1197,9 +1195,7 @@ function tagParsing(objs, shijoinit){
 		num = Number(sen);
 		$('#canv').empty();
 		$('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
-
 	});   
-
 
    //--■■■■■■■■■■■■■■■■■해외여행사진 __ostour■■■■■■■■■■■■■■■■■■
   var htxt1 = ''; var htxt2 = '';
