@@ -155,7 +155,7 @@
 /*	.data1{border-top:0px;}*/
 	.sh_no{text-align:center;}
 	.sh_title:hover, .sh_no:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
-/*	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
+/*	.sbtn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
 	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
 		border-spacing:11px;padding:1px;background:#ffe6ff;width:100%;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
 	.wd{color:blue;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;}
@@ -256,7 +256,7 @@
 
 <!-- 시조감상 shijo part -->
 <div class="container2">
-		<button id="rtn" class="btn1" onClick="shme();">RETURN</button>
+		<button id="srtn" class="sbtn1" onClick="shme();">RETURN</button>
 
 	<div class="sh_title sh_report">
 		<li id="sh_no" class="sh_no sh_title">NO</li>
@@ -645,10 +645,10 @@ function shme(){		//-- 시조놀이 감상에서 RETURN 할때
     $(".container").show();
 };
 
-//function shrtn(){		//-- 시조놀이 감상에서 RETURN 할때
-//    $('#canv').empty();
-//    $(".container2").show();
-//};
+function shrtn(){		//-- 시조놀이 감상에서 RETURN 할때
+    $('#canv').empty();
+    $(".container2").show();
+};
 
   //--■■■■■■■■■■■■■■■■■999_alplist.js■■■■■■■■■■■■■■■■■■
   //*== ●●●●●●●● alplist();      ----계절별 산행사진 모음 테이블----start==========
@@ -1194,7 +1194,7 @@ function tagParsing(objs, shijoinit){
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
-		$('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+		$('#canv').append('<div id="lyr"><button id="srtn" class="sbtn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
 	});   
 
    //--■■■■■■■■■■■■■■■■■해외여행사진 __ostour■■■■■■■■■■■■■■■■■■
