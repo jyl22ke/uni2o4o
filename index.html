@@ -1178,13 +1178,13 @@ function shijoinit(){
 
 function tagParsing(objs, shijoinit){
   var len = objs.length;
-  var tag = '';
+  var stag = '';
   for(i=0; i<objs.length; i++){
-    tag += "<li class='sh_no shi' title='"+ i +"'>"+objs[i][0]+"</li>"
+    stag += "<li class='sh_no shi' title='"+ i +"'>"+objs[i][0]+"</li>"
     +"<li class='sh_subj shi' title='"+ i +"'>"+objs[i][2]+"</li>"
     +"<li class='sh_date shi'>"+objs[i][1]+"</li>"+"<li class='sh_txt shi'>"+objs[i][4]+"</li>";
   }
-  document.getElementById("sh_data").innerHTML = tag;
+  document.getElementById("sh_data").innerHTML = stag;
 };
 
 //================ 시조놀이 감상 display ==========
