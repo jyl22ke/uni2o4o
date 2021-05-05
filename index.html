@@ -271,9 +271,9 @@
 		<li id="sh_subj" class="sh_subj sh_title">제목</li>
 		<li id="sh_date" class="sh_date sh_title">일시</li>
 		<li id="sh_txt" class="sh_txt sh_title">내용</li>
-	</div>-->
-	<div id="sh_data" class="sh_data sh_report">
 	</div>
+	<div id="sh_data" class="sh_data sh_report">
+	</div>-->
 </div>
 
   <div id="canv">
@@ -1157,14 +1157,14 @@ function objSort(obj, sort){
 function tagParsing(objm, yminit){
   var len = objm.length;
   var mtag = '';
-  var ptag = '<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button><div class="m_title m_report"><li id="m_no" class="m_no m_title">NO</li><li id="subj" class="subj m_title">제목</li><li id="artst" class="artst m_title">가수</li></div>';	
-  $('.container2').prepend(ptag);
+  var ptag = '<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button><div class="m_title m_report"><li id="m_no" class="m_no m_title">NO</li><li id="subj" class="subj m_title">제목</li><li id="artst" class="artst m_title">가수</li></div><div id="m_data" class="m_data m_report">';	
+  $('.container2').append(ptag);
   for(i=0; i<objm.length; i++){
     mtag += "<li class='m_no mus' title='"+ i +"'>"+objm[i][0]+"</li>"
     +"<li class='subj mus' title='"+ i +"'>"+objm[i][3]+"</li>"
     +"<li class='artst'>"+objm[i][4]+"</li>";
   }
-  document.getElementById("sh_data").innerHTML = mtag;
+  document.getElementById("m_data").innerHTML = mtag;
 };
 
 //================ 시조놀이 List 정렬================
@@ -1194,8 +1194,8 @@ function shijoinit(){
 function tagParsing(objs, shijoinit){
   var len = objs.length;
   var stag = '';
-  var ptag = '<button id="srtn" class="sbtn1" onClick="shme();">RETURN</button><div class="sh_title sh_report"><li id="sh_no" class="sh_no sh_title">NO</li><li id="sh_subj" class="sh_subj sh_title">제목</li><li id="sh_date" class="sh_date sh_title">일시</li><li id="sh_txt" class="sh_txt sh_title">내용</li></div>';	
-  $('.container2').prepend(ptag);
+  var ptag = '<button id="srtn" class="sbtn1" onClick="shme();">RETURN</button><div class="sh_title sh_report"><li id="sh_no" class="sh_no sh_title">NO</li><li id="sh_subj" class="sh_subj sh_title">제목</li><li id="sh_date" class="sh_date sh_title">일시</li><li id="sh_txt" class="sh_txt sh_title">내용</li></div><div id="sh_data" class="sh_data sh_report">';	
+  $('.container2').append(ptag);
   for(i=0; i<objs.length; i++){
     stag += "<li class='sh_no shi' title='"+ i +"'>"+objs[i][0]+"</li>"
     +"<li class='sh_subj shi' title='"+ i +"'>"+objs[i][2]+"</li>"
