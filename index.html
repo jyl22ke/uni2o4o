@@ -131,12 +131,13 @@
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
 	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;}
-	.report_m{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray;}
+	.report{display:grid;	grid-template-columns: 2fr 3fr 3fr 2fr 6fr;	grid-gap:1px;	border:1px solid gray;}
 	.mus,.artst{background:#e0ebeb;font-size:0.8em;}
 	.title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 	.data1{border-top:0px;}
 	.m_no{text-align:center;}
-	.subj,.artst{padding-left:10px;}
+	.subj{grid-column: 2/span 3;padding-left:10px;}
+	.artst{padding-left:10px;}
 	.title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
 	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
 
@@ -147,10 +148,10 @@
 	#canv{max-width:630px;padding:0px;margin:10px;text-align:left;}
 	.mi{height:35px;}
  /*------------  시조놀이 감상 ----shijo List 용 css------------ */
-	.report_s{display:grid;	grid-template-columns: 2fr 5fr 5fr 16fr;	grid-gap:1px;	border:1px solid gray;}
 	.shi{background:#e0ebeb;padding:5px 10px;}
 	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 	.sh_no{text-align:center;}
+	.sh_txt{grid-column: 4/span 2;}
 	.sh_title:hover, .sh_no:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
@@ -233,26 +234,20 @@
 
 <div class="container1">
 	<!-- 음악감상 yms part -->
-	<button id="rtn" class="btn1 lst_m" onClick="yme();">RETURN</button><button id="submita" class="btn1 lst_m"> 자동재생</button>
+	<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1 lst_m"> 자동재생</button>
 
-	<div class="title report_m lst_m">
-		<li id="m_no" class="m_no title">NO</li>
-		<li id="subj" class="subj title">제목</li>
-		<li id="artst" class="artst title">가수</li>
-	</div>
-	<div id="data_m" class="data report_m lst_m">
-	</div>
-	 
+	<div class="title report">
+		<li id="m_no" class="m_no title lst_m">NO</li>
+		<li id="subj" class="subj title lst_m">제목</li>
+		<li id="artst" class="artst title lst_m">가수</li>
 	<!-- 시조감상 shijo part -->
-	<button id="rtn" class="btn1 lst_s" onClick="yme();">RETURN</button>
-
-	<div class="sh_title sh_report lst_s">
-		<li id="sh_no" class="sh_no sh_title">NO</li>
-		<li id="sh_subj" class="sh_subj sh_title">제목</li>
-		<li id="sh_date" class="sh_date sh_title">일시</li>
-		<li id="sh_txt" class="sh_txt sh_title">내용</li>
+		<li id="sh_no" class="sh_no sh_title lst_s">NO</li>
+		<li id="sh_subj" class="sh_subj sh_title lst_s">제목</li>
+		<li id="sh_date" class="sh_date sh_title lst_s">일시</li>
+		<li id="sh_txt" class="sh_txt sh_title lst_s">내용</li>
 	</div>
-	<div id="sh_data" class="sh_data sh_report lst_s">
+	
+	<div id="data" class="data report">
 	</div>
 </div>
 
@@ -1128,11 +1123,11 @@ function tagParsing_m(obj, yminit){
   var len = obj.length;
   var tag = '';
   for(i=0; i<obj.length; i++){
-    tag += "<li class='m_no mus' title='"+ i +"'>"+obj[i][0]+"</li>"
-    +"<li class='subj mus' title='"+ i +"'>"+obj[i][3]+"</li>"
-    +"<li class='artst'>"+obj[i][4]+"</li>";
+    tag += "<li class='m_no mus lst_m' title='"+ i +"'>"+obj[i][0]+"</li>"
+    +"<li class='subj mus lst_m' title='"+ i +"'>"+obj[i][3]+"</li>"
+    +"<li class='artst lst_m'>"+obj[i][4]+"</li>";
   }
-  document.getElementById("data_m").innerHTML = tag;
+  document.getElementById("data").innerHTML = tag;
 };
 
 //================ 시조놀이 List 정렬================
@@ -1163,11 +1158,11 @@ function tagParsing_s(objs, shijoinit){
   var len = objs.length;
   var tag = '';
   for(i=0; i<objs.length; i++){
-    tag += "<li class='sh_no shi' title='"+ i +"'>"+objs[i][0]+"</li>"
-    +"<li class='sh_subj shi' title='"+ i +"'>"+objs[i][2]+"</li>"
-    +"<li class='sh_date shi'>"+objs[i][1]+"</li>"+"<li class='sh_txt shi'>"+objs[i][4]+"</li>";
+    tag += "<li class='sh_no shi lst_s' title='"+ i +"'>"+objs[i][0]+"</li>"
+    +"<li class='sh_subj shi lst_s' title='"+ i +"'>"+objs[i][2]+"</li>"
+    +"<li class='sh_date shi lst_s'>"+objs[i][1]+"</li>"+"<li class='sh_txt shi lst_s'>"+objs[i][4]+"</li>";
   }
-  document.getElementById("sh_data").innerHTML = tag;
+  document.getElementById("data").innerHTML = tag;
 };
 
 //================ 시조놀이 감상 display ==========
