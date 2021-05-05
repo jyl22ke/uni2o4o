@@ -142,7 +142,7 @@
 	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
 
 	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
-		border-spacing:11px;padding:1px;background:#ffe6ff;width:100%;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
+		border-spacing:11px;padding:1px;background:#ffe6ff;height:auto;text-align:center;font-family:"굴림";font-weight:bold;}
 	.wd{color:blue;padding-left:80px;text-align:left;line-height:160%;height:auto;overflow-y: auto;}
 	.h3{text-align:center;color:darkblue;}
 	#canv{padding:0px;margin:10px;text-align:left;}
@@ -1039,7 +1039,7 @@ var dur = null; var t = null; var num=null;
         onYouTubeIframeAPIReady();
     });
 
-	 $('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="retn();">RETURN</button><br><div><div id="player"></div><hr/> <input type="button" value="재생" onClick="playVideo();"/> <input type="button" value="일시정지" onClick="pauseVideo();"/> <input type="button" value="종료" onClick="stopVideo();"/> <input type="button" id="volumeMute" value="음소거" onClick="volumeMute();"/> 볼륨 : <input type="range" value="50" min="0" max="100" onChange="soundControl(this.value);"/></div><img src="../uni2o4o/mel01.gif" class="mi"><img src="../uni2o4o/mel02.gif"  class="mi"> <img src="../uni2o4o/mel03.gif" class="mi"><img src="../uni2o4o/mel02.gif" class="mi"><img src="../uni2o4o/mel01.gif" class="mi"><br><br><br><h3 class="h3">' + ytbm[num][3] + ' - ' + ytbm[num][4] + '</h3><br><br><div class="wd">' + ytbm[num][5] + '</div><br><img src="../uni2o4o/iou.gif"><br><br></div><br><br>');
+	 $('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="retn();">RETURN</button><br><div><div id="player"></div><hr/> <input type="button" value="재생" onClick="playVideo();"/> <input type="button" value="일시정지" onClick="pauseVideo();"/> <input type="button" value="종료" onClick="stopVideo();"/> <input type="button" id="volumeMute" value="음소거" onClick="volumeMute();"/> 볼륨 : <input type="range" value="50" min="0" max="100" onChange="soundControl(this.value);"/></div><img src="../uni2o4o/mel01.gif" class="mi"><img src="../uni2o4o/mel02.gif"  class="mi"> <img src="../uni2o4o/mel03.gif" class="mi"><img src="../uni2o4o/mel02.gif" class="mi"><img src="../uni2o4o/mel01.gif" class="mi"><br><br><br><h3 class="h3">' + ytbm[num][3] + ' - ' + ytbm[num][4] + '</h3><br><br><div class="wd">' + ytbm[num][5] + '</div><br><img src="../uni2o4o/iou.gif"><br><br></div>');
 
 	});
 };
