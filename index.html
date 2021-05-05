@@ -587,9 +587,9 @@ function yms(){
 	$(function (){
 		$(".container2").show();
 		$(".container").hide();
-  	        $(".container2").empty();
-
 		yminit();
+  	        $(".mus").show();
+  	        $(".shi").hide();		
 	});
 };
 
@@ -598,8 +598,9 @@ function shijof(){
 	$(function (){
 		$(".container2").show();
 		$(".container").hide();
-  	        $(".container2").empty();
 		shijoinit();
+  	        $(".shi").show();
+  	        $(".mus").hide();		
 	});
 };
 
@@ -1162,11 +1163,11 @@ function tagParsing(obj, yminit){
   var mtag = '';
   var ptag = '<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button><div id="ms_data" class="ms_data ms_report">';	
   $('.container2').append(ptag);
-  mtag = '<li id="m_no" class="m_no m_title">NO</li><li id="subj" class="subj m_title">제목</li><li id="artst" class="artst m_title">가수</li>';
+  mtag = '<li id="m_no" class="m_no m_title mus">NO</li><li id="subj" class="subj m_title mus">제목</li><li id="artst" class="artst m_title mus">가수</li>';
   for(i=0; i<obj.length; i++){
     mtag += "<li class='m_no mus' title='"+ i +"'>"+obj[i][0]+"</li>"
     +"<li class='subj mus' title='"+ i +"'>"+obj[i][3]+"</li>"
-    +"<li class='artst'>"+obj[i][4]+"</li>";
+    +"<li class='artst mus'>"+obj[i][4]+"</li>";
   }
   document.getElementById("ms_data").innerHTML = mtag;
 };
@@ -1200,7 +1201,7 @@ function tagParsing(objs, shijoinit){
   var stag = '';
   var ptag = '<button id="srtn" class="sbtn1" onClick="shme();">RETURN</button><div id="ms_data" class="ms_data ms_report">';	
   $('.container2').append(ptag);
-  stag = '<li id="sh_no" class="sh_no sh_title">NO</li><li id="sh_subj" class="sh_subj sh_title">제목</li><li id="sh_date" class="sh_date sh_title">일시</li><li id="sh_txt" class="sh_txt sh_title">내용</li>';
+  stag = '<li id="sh_no" class="sh_no sh_title shi">NO</li><li id="sh_subj" class="sh_subj sh_title shi">제목</li><li id="sh_date" class="sh_date sh_title shi">일시</li><li id="sh_txt" class="sh_txt sh_title shi">내용</li>';
   for(i=0; i<objs.length; i++){
     stag += "<li class='sh_no shi' title='"+ i +"'>"+objs[i][0]+"</li>"
     +"<li class='sh_subj shi' title='"+ i +"'>"+objs[i][2]+"</li>"
