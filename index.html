@@ -146,6 +146,9 @@
 	.h3{text-align:center;color:darkblue;}
 	#canv{max-width:630px;padding:0px;margin:10px;text-align:left;}
 	.mi{height:35px;}
+ /*------------  시조놀이 감상 ----shijo List 용 css------------ */
+	.report_s{display:grid;	grid-template-columns: 2fr 5fr 5fr 16fr;	grid-gap:1px;	border:1px solid gray;}
+	  
 
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
@@ -224,9 +227,10 @@
 	</div>
 </div>
 
-<!-- 음악감상 yms part -->
+
 <div class="container1">
-		<button id="rtn" class="btn1 lst_m" onClick="yme();">RETURN</button><button id="submita" class="btn1 lst_m"> 자동재생</button>
+	<!-- 음악감상 yms part -->
+	<button id="rtn" class="btn1 lst_m" onClick="yme();">RETURN</button><button id="submita" class="btn1 lst_m"> 자동재생</button>
 
 	<div class="title report_m lst_m">
 		<li id="m_no" class="m_no title">NO</li>
@@ -234,6 +238,18 @@
 		<li id="artst" class="artst title">가수</li>
 	</div>
 	<div id="data_m" class="data report_m lst_m">
+	</div>
+	 
+	<!-- 시조감상 shijo part -->
+	<button id="rtn" class="btn1 lst_s" onClick="shme();">RETURN</button>
+
+	<div class="sh_title sh_report lst_s">
+		<li id="sh_no" class="sh_no sh_title">NO</li>
+		<li id="sh_subj" class="sh_subj sh_title">제목</li>
+		<li id="sh_date" class="sh_date sh_title">일시</li>
+		<li id="sh_txt" class="sh_txt sh_title">내용</li>
+	</div>
+	<div id="sh_data" class="sh_data sh_report lst_s">
 	</div>
 </div>
 
@@ -1103,6 +1119,52 @@ function tagParsing_m(obj, yminit){
   document.getElementById("data_m").innerHTML = tag;
 };
 
+//================ 시조놀이 List 정렬================
+
+function shijoinit(){
+  tagParsing_s(shijo, true);
+
+  //click Evt 정렬
+  $(".sh_title").click(function(){
+    var titleName = this.id;
+    if(titleName == "sh_no"){
+      objSort(shijo, [0]);
+      tagParsing_s(shijo, false);
+    }else if(titleName == "sh_subj"){
+      objSort(shijo, [2]);
+      tagParsing_s(shijo, false);
+    }else if(titleName == "sh_date"){
+      objSort(shijo, [1]);
+      tagParsing_s(shijo, false);
+    }else if(titleName == "sh_txt"){
+      objSort(shijo, [4]);
+      tagParsing_s(shijo, false);
+    }
+  })
+}
+
+function tagParsing_s(objs, shijoinit){
+  var len = objs.length;
+  var tag = '';
+  for(i=0; i<objs.length; i++){
+    tag += "<li class='sh_no shi' title='"+ i +"'>"+objs[i][0]+"</li>"
+    +"<li class='sh_subj shi' title='"+ i +"'>"+objs[i][2]+"</li>"
+    +"<li class='sh_date shi'>"+objs[i][1]+"</li>"+"<li class='sh_txt shi'>"+objs[i][4]+"</li>";
+  }
+  document.getElementById("sh_data").innerHTML = tag;
+};
+
+//================ 시조놀이 감상 display ==========
+	$(document).on("click", ".shi", 
+	function(){
+		$(".container2").hide();
+		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
+		num = Number(sen);
+		$('#canv').empty();
+		$('#canv').append('<div id="lyr"><button id="rtn" class="btn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
+	});   
+		
+		
    //--■■■■■■■■■■■■■■■■■해외여행사진 __ostour■■■■■■■■■■■■■■■■■■
   var htxt1 = ''; var htxt2 = '';
   var ftxt1 = ''; var ftxt2 = '';
