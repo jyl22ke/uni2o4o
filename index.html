@@ -19,14 +19,14 @@
 	.head {	text-align: center;font-weight: bold;margin-bottom:20px;font-family:"Nanum Brush Script","서울흘기","굴림";}
 	.head>h1 { font-size: 2.5em;}
 /* ----------- mmenu / side grid -------------- */
-	.side {display: grid; 	grid-template-columns: 190px 130px 1fr; grid-template-rows: 160px 190px 180px 500px; grid-gap: 10px;}
+	.side {display: grid; 	grid-template-columns: 190px 130px 1fr; grid-template-rows: minmax(160px,auto) 190px 180px 500px; grid-gap: 10px;}
 	#canvas {	border-radius:60px;}
 	.imgjy {grid-column: 1/span 1;grid-row: 2/span 1;}
 	.prof {grid-column: 1/span 2;grid-row: 3/span 1; color: #f93; font-weight: bold;}
 	.prof h4{padding: 0; margin: 0;}
 	.prof h5{padding: 10px; margin: 0;}
 	.imgjy>img{border: 2px solid white;}
-	.lans { grid-column: 1/span 3;grid-row: 4/span 1; margin:10px; margin-left:40px;}
+	.lans { grid-column: 1/span 3;grid-row: 4/span 1; margin:10px;}
 /* ------------ calendar 용 css ---------------- */
 	#dcal {background-color: lightblue;width: 175px;border: 1px solid gray;border-radius:10px;padding:5px;height:auto;}
 	.heac {grid-column: 1/span 7;font-size: 1em;font-weight: bold;text-align: center;margin-bottom:5px;}
@@ -37,24 +37,20 @@
 	.da:nth-child(7n),.da:nth-child(7n+1){color:#f00;}
 	.tod {background: radial-gradient(#ffc, lightblue );}
 /* ----------- mmenu / maing grid -------------- */
-	.maing {display: grid; grid-template-columns: repeat(4,120px); grid-template-rows: repeat(5, 120px); grid-gap: 10px; max-width:500px;	font-size:0.8em}
+	.maing {display: grid; grid-template-columns: repeat(4,140px); grid-template-rows: repeat(3, 140px); grid-gap: 10px; max-width:500px;	font-size:0.8em}
 	.bl-a, .right {display: none;}
 	.alpine {	grid-column: 1/span 2;grid-row: 1/span 1;max-width:330px;background:#e0ebeb url(./img_alpine.jpg) no-repeat center;}
 	.priv {grid-column: 3/span 1;grid-row: 1/span 1;	max-width:160px;	background:#e0ebeb url(./img_priv.jpg) no-repeat center; }
 	.wfall {grid-column: 2/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_wfall.jpg) no-repeat center; }
 	.rock {grid-column: 3/span 1;grid-row: 2/span 1;	max-width:160px;	background:#e0ebeb url(./img_rock.jpg) no-repeat center; }
-	.shijo {grid-column: 1/span 2;grid-row: 3/span 1;	max-width:330px;	background:#e0ebeb url(./img_shijo.jpg) no-repeat center; }
-	.sun {grid-column: 3/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(./img_sun.jpg) no-repeat center; }
-	.flower {grid-column: 2/span 1;grid-row: 4/span 1;	max-width:160px;	background:#e0ebeb url(./img_flower.jpg) no-repeat center; }
-	.bird {grid-column: 3/span 1;grid-row: 4/span 1;	max-width:160px;	background:#e0ebeb url(./img_bird.jpg) no-repeat center; }
-	.ostr {grid-column: 1/span 2;grid-row: 5/span 1;	max-width:330px;	background:#e0ebeb url(./img_ostr.jpg) no-repeat center; }
-	.yms {grid-column: 3/span 1;grid-row: 5/span 1;	max-width:160px;	background:#e0ebeb url(./mus.jpg) no-repeat center; }
+	.ostr {grid-column: 1/span 2;grid-row: 3/span 1;	max-width:330px;	background:#e0ebeb url(./img_ostr.jpg) no-repeat center; }
+	.yms {grid-column: 3/span 1;grid-row: 3/span 1;	max-width:160px;	background:#e0ebeb url(./mus.jpg) no-repeat center; }
 	.mnu {border-radius:20px;padding:5px;}
 	.mnu:hover{color:#f00;cursor:pointer;}
 	.combo{	grid-column: 4/span 1;grid-row: 1/span 1;}
 
  	@media screen and (min-width: 678px) { .lans { grid-column: 2/span 1; grid-row: 2/span 3; }} 
-	@media screen and (min-width: 950px) { .lans { grid-column: 3/span 1; grid-row: 1/span 3; } }
+	@media screen and (min-width: 950px) { .lans { grid-column: 3/span 1;} }
  /*------------  alplist(); ----계절별 산행사진 모음 테이블 용 css------------ */
 	.ha,.hb,.h2{text-align: center;}
 	.btn{cursor:pointer;text-align:center;font-weight:bold;padding:5px;color:#f00;margin:0px 20px; position:fixed;}
@@ -130,33 +126,14 @@
   	}
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
-	.container2{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:700px;padding:20px;margin:10px;}
-/* 	.m_report{display:grid;grid-template-columns:2fr 8fr 6fr;grid-gap:1px;border:1px solid gray;font-size:0.8em;}*/
- 	.ms_report{display:grid;grid-template-columns:2fr 3fr 3fr 2fr 6fr;grid-gap:1px;border:1px solid gray;font-size:0.8em;}
-
-	.m_no{grid-column: 1/span 1;grid-row: 1/span 1;text-align:center;}
-	.subj{grid-column: 2/span 3;grid-row: 1/span 1;padding-left:10px;}
-/*	.subj{grid-column: 2/span 3; padding-left:10px;}*/
-	.artst{grid-column: 5/span 1;grid-row: 1/span 1;padding-left:10px;}
-
-
-	.sh_no{grid-column: 1/span 1;grid-row: 1/span 1;text-align:center;}
-	.sh_subj{grid-column: 2/span 1;grid-row: 1/span 1;}
-	.sh_date{grid-column: 3/span 1;grid-row: 1/span 1;}
-	.sh_txt{grid-column: 4/span 2;grid-row: 1/span 1;}
-/*	.sh_txt{grid-column: 4/span 2;}*/
-
-	  
-	  
-/*	  
-	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;height:800px}
-	.m_report{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray; font-size:0.8em;}
+	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;}
+	.report{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray;}
 	.mus,.artst{background:#e0ebeb;font-size:0.8em;}
-	.m_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
-//	.m_data{border-top:0px;}
+	.title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
+	.data1{border-top:0px;}
 	.m_no{text-align:center;}
 	.subj,.artst{padding-left:10px;}
-	.m_title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
+	.title li:hover, .mus:hover, button:hover{color:red;cursor:pointer}
 	.btn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
 
 	#lyr{border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;
@@ -165,16 +142,7 @@
 	.h3{text-align:center;color:darkblue;}
 	#canv{max-width:630px;padding:0px;margin:10px;text-align:left;}
 	.mi{height:35px;}
-*/
- /*------------  시조놀이 감상 ----shijo List 용 css------------ */
-/*	.container2{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:700px;padding:20px;margin:10px;}
- 	.sh_report{display:grid;	grid-template-columns: 2fr 5fr 5fr 16fr;	grid-gap:1px;	border:1px solid gray;font-size:0.8em;}
-	.shi{background:#e0ebeb;padding:5px 10px;}
-	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
-	.sbtn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
-	.sh_no{text-align:center;}
-	.sh_no:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
-*/
+
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
     button{border:1px solid gray;border-radius:5px;padding:2px; color:black; margin: 5px; font-size:16px; font-weight:bold; background-color:skyblue;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3), 0 6px 20px 0 rgba(0,0,0,0.3);}
@@ -226,7 +194,7 @@
 			<div id="dcal"></div>
 			<span class="clocki"><canvas id="canvas" width="120px" height="120px"
 			style="background-color:#fff"></canvas></span>
-			<div class="imgjy"><img src="./na3.jpg"></div>
+			<div class="imgjy"><img src="./na1a.jpg"></div>
 			<div class="prof">
 				<h4>하눌타리 이종영</h4>
 				<h5>하염(何念)없이 사는 사람<br>달력 떼쟎고 버티는 이에게<br>부질없는 일이라 하면서도<br>모습 참 예쁘다 하는 사람<br></h5>
@@ -238,13 +206,8 @@
 					<div class="mnu wfall" onclick="bran(3);">3폭포</div>
 					<div class="mnu rock" onclick="bran(4);">4기묘한 바위 나무</div>
 					<div class="mnu bl-a">5</div>
-					<div class="mnu shijo" onclick="bran(5)">5시조놀이</div>
-					<div class="mnu sun" onclick="bran(6);">6일출일몰</div>
-					<div class="mnu flower" onclick="bran(7);">7꽃_벌</div>
-					<div class="mnu bird" onclick="bran(8);">8새_하늘</div>
-					<div class="mnu bl-a">5</div>
-					<div class="mnu ostr" onclick="bran(9)">9해외 여행사진</div>
-					<div class="mnu yms" onclick="bran(0);">0음악감상</div>
+					<div class="mnu ostr" onclick="bran(5)">6해외 여행사진</div>
+					<div class="mnu yms" onclick="bran(6);">7음악감상</div>
 					<div class="mnu right"></div>
 				</div>
 			</div>
@@ -253,30 +216,16 @@
 </div>
 
 <!-- 음악감상 yms part -->
-<!--<div class="container1">
+<div class="container1">
 		<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button>
 
-	<div class="m_title m_report">
-		<li id="m_no" class="m_no m_title">NO</li>
-		<li id="subj" class="subj m_title">제목</li>
-		<li id="artst" class="artst m_title">가수</li>
+	<div class="title report">
+		<li id="m_no" class="m_no title">NO</li>
+		<li id="subj" class="subj title">제목</li>
+		<li id="artst" class="artst title">가수</li>
 	</div>
-	<div id="m_data" class="m_data m_report">
+	<div id="data" class="data report">
 	</div>
-</div>-->
-
-<!-- 시조감상 shijo part -->
-<div class="container2">
-<!--		<button id="srtn" class="sbtn1" onClick="shme();">RETURN</button>
-
-	<div class="sh_title sh_report">
-		<li id="sh_no" class="sh_no sh_title">NO</li>
-		<li id="sh_subj" class="sh_subj sh_title">제목</li>
-		<li id="sh_date" class="sh_date sh_title">일시</li>
-		<li id="sh_txt" class="sh_txt sh_title">내용</li>
-	</div>
-	<div id="sh_data" class="sh_data sh_report">
-	</div>-->
 </div>
 
   <div id="canv">
@@ -300,7 +249,6 @@ fread("trimgs");
 fread("ytbm");
 fread("city");
 fread("imges");
-fread("shijo");
 	
 function fread(fn){
     $(function (){
@@ -480,13 +428,9 @@ function fread(fn){
 			}else {if (ctg == "2"){c_cd0 = "";c_cd = "내"; vwpriv();    //===== :contains("내")
 			}else	{if (ctg == "3"){c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "4"){c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "5"){shijof();
-			}else	{if (ctg == "6"){c_cd0 = "";c_cd = "일출일몰"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "7"){c_cd0 = "";c_cd = "꽃_벌"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "8"){c_cd0 = "";c_cd = "새_하늘"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "9"){tourlist();
-			}else	{if (ctg == "0"){yms();}
-			}}}}}}}}}
+			}else	{if (ctg == "5"){tourlist();
+			}else	{if (ctg == "6"){yms();}
+			}}}}}
 		});
 	};
  			
@@ -495,7 +439,7 @@ function fread(fn){
 
 function vwpriv(){
 $(function (){
-	var ccds = '<div class="combo"><select id="combo"><option value="-1" selected="selected">년도 선택</option><option value="2021">2021<option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2012">2012~14</option><option value="2007">2007~11</option></select></div>';
+	var ccds = '<div class="combo"><select id="combo"><option value="-1" selected="selected">년도 선택</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2012">2012~14</option><option value="2007">2007~11</option></select></div>';
 	$('.maing').append(ccds);
 
 	$(function(){
@@ -522,7 +466,7 @@ $(function (){
 			cod = '내' + (String(c_cda)).substr(2,2);
 
 			  var telists = $.map(trimgs, function(element, index) {
-				  if (element[5].includes(cod)) { //=== "내19"
+				  if (element[5] == cod) { //=== "내19", "폭포", "바위 나무"
 					return [element]
 				  };
 			  });
@@ -560,7 +504,7 @@ $(function (){
 
 //================== 이미지 & description 화면================
   var telists = $.map(trimgs, function(element, index) {
-   	  if (element[5].includes(c_cd)) { //=== "폭포", "바위 나무", "일출일몰", "꽃_벌", "새_하늘"
+   	  if (element[5] == c_cd) { //=== "내19", "폭포", "바위 나무"
   	 	return [element]
   	  };
   });
@@ -585,22 +529,9 @@ $(function (){
   //*== ●●●●●●●● yms();      ----음악 감상 ----start==========
 function yms(){
 	$(function (){
-		$(".container2").show();
 		$(".container").hide();
+		$(".container1").show();
 		yminit();
-  	        $(".mus").show();
-  	        $(".shi").hide();		
-	});
-};
-
-  //*== ●●●●●●●● shijof();      ----시조놀이 감상 ----start==========
-function shijof(){
-	$(function (){
-		$(".container2").show();
-		$(".container").hide();
-		shijoinit();
-  	        $(".shi").show();
-  	        $(".mus").hide();		
 	});
 };
 
@@ -650,19 +581,10 @@ function osme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
     $(".mmenu").show();
 };
 
+
 function yme(){		//-- 음악감상에서 RETURN 할때
 	$(".container1").hide();
     $(".container").show();
-};
-
-function shme(){		//-- 시조놀이 감상에서 RETURN 할때
-	$(".container2").hide();
-    $(".container").show();
-};
-
-function shrtn(){		//-- 시조놀이 감상에서 RETURN 할때
-    $('#canv').empty();
-    $(".container2").show();
 };
 
   //--■■■■■■■■■■■■■■■■■999_alplist.js■■■■■■■■■■■■■■■■■■
@@ -816,9 +738,7 @@ function shrtn(){		//-- 시조놀이 감상에서 RETURN 할때
   }
  
   //========== 정렬  ======================
-
-/*		
-function objSort(obj, sort){
+  function objSort(obj, sort){
     if(orderBy == "asc"){ //오름차순 정렬
       orderBy = "desc";
       obj.sort(function(a, b){
@@ -832,7 +752,7 @@ function objSort(obj, sort){
         else if (a[sort] < b[sort]) return 1;
       });
     }
-  }*/
+  }
 		
   function tagParsing(obj, init){
     var tag = "";
@@ -1127,7 +1047,7 @@ function yminit(){
   tagParsing(ytbm, true);
 
   //click Evt 정렬
-  $(".m_title").click(function(){
+  $(".title").click(function(){
     var titleName = this.id;
     if(titleName == "m_no"){
       objSort(ytbm, [0]);
@@ -1160,65 +1080,14 @@ function objSort(obj, sort){
  
 function tagParsing(obj, yminit){
   var len = obj.length;
-  var mtag = '';
-  var ptag = '<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button><div id="ms_data" class="ms_data ms_report">';	
-  $('.container2').append(ptag);
-  mtag = '<li id="m_no" class="m_no m_title mus">NO</li><li id="subj" class="subj m_title mus">제목</li><li id="artst" class="artst m_title mus">가수</li>';
+  var tag = '';
   for(i=0; i<obj.length; i++){
-    mtag += "<li class='m_no mus' title='"+ i +"'>"+obj[i][0]+"</li>"
+    tag += "<li class='m_no mus' title='"+ i +"'>"+obj[i][0]+"</li>"
     +"<li class='subj mus' title='"+ i +"'>"+obj[i][3]+"</li>"
-    +"<li class='artst mus'>"+obj[i][4]+"</li>";
+    +"<li class='artst'>"+obj[i][4]+"</li>";
   }
-  document.getElementById("ms_data").innerHTML = mtag;
+  document.getElementById("data").innerHTML = tag;
 };
-
-//================ 시조놀이 List 정렬================
-
-function shijoinit(){
-  tagParsing(shijo, true);
-
-  //click Evt 정렬
-  $(".sh_title").click(function(){
-    var titleName = this.id;
-    if(titleName == "sh_no"){
-      objSort(shijo, [0]);
-      tagParsing(shijo, false);
-    }else if(titleName == "sh_subj"){
-      objSort(shijo, [2]);
-      tagParsing(shijo, false);
-    }else if(titleName == "sh_date"){
-      objSort(shijo, [1]);
-      tagParsing(shijo, false);
-    }else if(titleName == "sh_txt"){
-      objSort(shijo, [4]);
-      tagParsing(shijo, false);
-    }
-  })
-}
-
-function tagParsing(objs, shijoinit){
-  var len = objs.length;
-  var stag = '';
-  var ptag = '<button id="srtn" class="sbtn1" onClick="shme();">RETURN</button><div id="ms_data" class="ms_data ms_report">';	
-  $('.container2').append(ptag);
-  stag = '<li id="sh_no" class="sh_no sh_title shi">NO</li><li id="sh_subj" class="sh_subj sh_title shi">제목</li><li id="sh_date" class="sh_date sh_title shi">일시</li><li id="sh_txt" class="sh_txt sh_title shi">내용</li>';
-  for(i=0; i<objs.length; i++){
-    stag += "<li class='sh_no shi' title='"+ i +"'>"+objs[i][0]+"</li>"
-    +"<li class='sh_subj shi' title='"+ i +"'>"+objs[i][2]+"</li>"
-    +"<li class='sh_date shi'>"+objs[i][1]+"</li>"+"<li class='sh_txt shi'>"+objs[i][4]+"</li>";
-  }
-  document.getElementById("ms_data").innerHTML = stag;
-};
-
-//================ 시조놀이 감상 display ==========
-	$(document).on("click", ".shi", 
-	function(){
-		$(".container2").hide();
-		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
-		num = Number(sen);
-		$('#canv').empty();
-		$('#canv').append('<div id="lyr"><button id="srtn" class="sbtn1" onClick="shrtn();">RETURN</button><br><br><br><br><h3 class="h3">' + shijo[num][2] + ' &nbsp &nbsp &nbsp &nbsp &nbsp ' + shijo[num][1] + '</h3><br><br><div class="wd">' + shijo[num][4] + '</div><br><br><br></div><br><br>');
-	});   
 
    //--■■■■■■■■■■■■■■■■■해외여행사진 __ostour■■■■■■■■■■■■■■■■■■
   var htxt1 = ''; var htxt2 = '';
@@ -1280,7 +1149,7 @@ function tagParsing(objs, shijoinit){
         var csum = "";
 
         htxt1 = '<h1 class="hd">' + tour[num1][4] + '</h1>';
-        htxt2 = '<span><button onclick="tourlist();" title="Main"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16" border=0 align=top></button></span>';
+        htxt2 = '<span><button onclick="tourlist();" title="Main"><img src="./home.gif" border=0 align=top></button></span>';
         hdtitl();
 
         for (var i = 0; i < city.length; i++) {
@@ -1330,7 +1199,7 @@ function tagParsing(objs, shijoinit){
         var smtxt = new Array;        var smsum = "";
         slz = sez;
 
-        mtxt.push('<div id="menubar"><span onclick="rtncity();"><img src="http://cfile285.uf.daum.net/original/99AF47455E55CD6E318F16"></span><div id="player"></div><ul>');
+        mtxt.push('<div id="menubar"><span onclick="rtncity();"><img src="./home.gif"></span><div id="player"></div><ul>');
 
         seq = sez.substring(0, 1);
         for (i = 0; i < city.length; i++) {
@@ -1492,7 +1361,6 @@ var tour = [
 ["N", "장가계", "2016.04.02 ~ 04.06", "http://cfile246.uf.daum.net/image/277437485705CE051AC870", "중국 호남성 장가계 풍경사진", "Zhangjiajie", "in the north-west of Hunan Province, China"],
 ["O", "발칸동유럽(크슬오체)", "2018.11.02 ~ 11.10", "http://cfile262.uf.daum.net/image/9919E23C5BF0F6051A3EBF", "발칸동유럽 4국(크,슬,오,체) 풍경사진", "Croatia, Slovenia, Austria, Tzech ", "in the Balkans and Eastern Europe"]
 ];
-
  </script>
  </body>
 </html>
