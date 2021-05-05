@@ -206,8 +206,13 @@
 					<div class="mnu wfall" onclick="bran(3);">3폭포</div>
 					<div class="mnu rock" onclick="bran(4);">4기묘한 바위 나무</div>
 					<div class="mnu bl-a">5</div>
-					<div class="mnu ostr" onclick="bran(5)">6해외 여행사진</div>
-					<div class="mnu yms" onclick="bran(6);">7음악감상</div>
+					<div class="mnu shijo" onclick="bran(5)">5시조놀이</div>
+					<div class="mnu sun" onclick="bran(6);">6일출일몰</div>
+					<div class="mnu flower" onclick="bran(7);">7꽃_벌</div>
+					<div class="mnu bird" onclick="bran(8);">8새_하늘</div>
+					<div class="mnu bl-a">5</div>
+					<div class="mnu ostr" onclick="bran(9)">9해외 여행사진</div>
+					<div class="mnu yms" onclick="bran(0);">0음악감상</div>
 					<div class="mnu right"></div>
 				</div>
 			</div>
@@ -249,6 +254,7 @@ fread("trimgs");
 fread("ytbm");
 fread("city");
 fread("imges");
+fread("shijo");
 	
 function fread(fn){
     $(function (){
@@ -428,9 +434,13 @@ function fread(fn){
 			}else {if (ctg == "2"){c_cd0 = "";c_cd = "내"; vwpriv();    //===== :contains("내")
 			}else	{if (ctg == "3"){c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
 			}else	{if (ctg == "4"){c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
-			}else	{if (ctg == "5"){tourlist();
-			}else	{if (ctg == "6"){yms();}
-			}}}}}
+			}else	{if (ctg == "5"){shijof();
+			}else	{if (ctg == "6"){c_cd0 = "";c_cd = "일출일몰"; cod = c_cd; vwphoto();
+			}else	{if (ctg == "7"){c_cd0 = "";c_cd = "꽃_벌"; cod = c_cd; vwphoto();
+			}else	{if (ctg == "8"){c_cd0 = "";c_cd = "새_하늘"; cod = c_cd; vwphoto();
+			}else	{if (ctg == "9"){tourlist();
+			}else	{if (ctg == "0"){yms();}
+			}}}}}}}}}
 		});
 	};
  			
