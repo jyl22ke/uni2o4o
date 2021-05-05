@@ -130,6 +130,22 @@
   	}
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
+	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:700px;padding:20px;margin:10px;}
+ 	.sh_report{display:grid;	grid-template-columns: 2fr 3fr 3fr 2fr 6fr;	grid-gap:1px;	border:1px solid gray;font-size:0.8em;}
+
+	.m_no{text-align:center;}
+	.subj{grid-column: 2/span 3; padding-left:10px;}
+	.artst{padding-left:10px;}
+
+
+	.sh_no{text-align:center;}
+	.sh_subj{}
+	.sh_date{}
+	.sh_txt{grid-column: 4/span 2;}
+
+	  
+	  
+/*	  
 	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;height:800px}
 	.m_report{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray; font-size:0.8em;}
 	.mus,.artst{background:#e0ebeb;font-size:0.8em;}
@@ -146,16 +162,16 @@
 	.h3{text-align:center;color:darkblue;}
 	#canv{max-width:630px;padding:0px;margin:10px;text-align:left;}
 	.mi{height:35px;}
-
+*/
  /*------------  시조놀이 감상 ----shijo List 용 css------------ */
-	.container2{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:700px;padding:20px;margin:10px;}
+/*	.container2{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:700px;padding:20px;margin:10px;}
  	.sh_report{display:grid;	grid-template-columns: 2fr 5fr 5fr 16fr;	grid-gap:1px;	border:1px solid gray;font-size:0.8em;}
 	.shi{background:#e0ebeb;padding:5px 10px;}
 	.sh_title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 	.sbtn1{font-size:0.9em; text-align:center; font-weight:bold;margin:10px;margin-top:0px;padding:5px;}
 	.sh_no{text-align:center;}
 	.sh_no:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
-
+*/
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
     button{border:1px solid gray;border-radius:5px;padding:2px; color:black; margin: 5px; font-size:16px; font-weight:bold; background-color:skyblue;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3), 0 6px 20px 0 rgba(0,0,0,0.3);}
@@ -233,9 +249,9 @@
 	</div>
 </div>
 
-<!-- 음악감상 yms part 
+<!-- 음악감상 yms part -->
 <div class="container1">
-		<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button>
+<!--		<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button>
 
 	<div class="m_title m_report">
 		<li id="m_no" class="m_no m_title">NO</li>
@@ -243,11 +259,11 @@
 		<li id="artst" class="artst m_title">가수</li>
 	</div>
 	<div id="m_data" class="m_data m_report">
-	</div>
-</div>-->
+	</div>-->
+</div>
 
 <!-- 시조감상 shijo part -->
-<div class="container2">
+<!--<div class="container2">
 		<button id="srtn" class="sbtn1" onClick="shme();">RETURN</button>
 
 	<div class="sh_title sh_report">
@@ -258,7 +274,7 @@
 	</div>
 	<div id="sh_data" class="sh_data sh_report">
 	</div>
-</div>
+</div>-->
 
   <div id="canv">
   </div>
