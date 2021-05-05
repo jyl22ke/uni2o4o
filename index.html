@@ -241,7 +241,7 @@
 	</div>
 	 
 	<!-- 시조감상 shijo part -->
-	<button id="rtn" class="btn1 lst_s" onClick="shme();">RETURN</button>
+	<button id="rtn" class="btn1 lst_s" onClick="yme();">RETURN</button>
 
 	<div class="sh_title sh_report lst_s">
 		<li id="sh_no" class="sh_no sh_title">NO</li>
@@ -559,12 +559,25 @@ $(function (){
   //*== ●●●●●●●● yms();      ----음악 감상 ----start==========
 function yms(){
 	$(function (){
-		$(".container").hide();
 		$(".container1").show();
+		$(".container").hide();
 		yminit();
+		$('.lst_m').show();
+		$('.lst_s').hide();
 	});
 };
 
+  //*== ●●●●●●●● shijof();      ----시조놀이 감상 ----start==========
+function shijof(){
+	$(function (){
+		$(".container1").show();
+		$(".container").hide();
+		shijoinit();
+		$('.lst_s').show();
+		$('.lst_m').hide();
+	});
+};
+		
   //*== ●  vwphoto();      ----테마별 사진모음 ----end==========
 
 function ime(){		//-- 계절별 테이블에서 RETURN 할때
@@ -608,13 +621,13 @@ function osme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
     $('#canvao').empty();
 	$(".contentso").hide();
 	$(".container").show();
-    $(".mmenu").show();
+        $(".mmenu").show();
 };
 
 
-function yme(){		//-- 음악감상에서 RETURN 할때
+function yme(){		//-- 음악감상/시조놀이감상에서 RETURN 할때
+        $(".container").show();
 	$(".container1").hide();
-    $(".container").show();
 };
 
   //--■■■■■■■■■■■■■■■■■999_alplist.js■■■■■■■■■■■■■■■■■■
