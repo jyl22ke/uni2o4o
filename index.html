@@ -131,7 +131,7 @@
 
  /*------------  음악감상 ----yms Music List 용 css------------ */
 	.container1{display:none;border:5px solid gray;background:lightblue;text-align:left;max-width:630px;padding:20px;margin:10px;}
-	.report{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray;}
+	.report_m{display:grid;	grid-template-columns: 1fr 7fr 4fr;	grid-gap:1px;	border:1px solid gray;}
 	.mus,.artst{background:#e0ebeb;font-size:0.8em;}
 	.title{background:#e0ebeb;border-bottom:0px;margin-bottom:1px;text-align:center;font-weight:bold;border:1px solid gray;}
 	.data1{border-top:0px;}
@@ -228,12 +228,12 @@
 <div class="container1">
 		<button id="rtn" class="btn1" onClick="yme();">RETURN</button><button id="submita" class="btn1"> 자동재생</button>
 
-	<div class="title report">
+	<div class="title report_m">
 		<li id="m_no" class="m_no title">NO</li>
 		<li id="subj" class="subj title">제목</li>
 		<li id="artst" class="artst title">가수</li>
 	</div>
-	<div id="data" class="data report">
+	<div id="data_m" class="data report_m">
 	</div>
 </div>
 
@@ -1058,20 +1058,20 @@ var dur = null; var t = null; var num=null;
 var orderBy = "asc";
 
 function yminit(){
-  tagParsing(ytbm, true);
+  tagParsing_m(ytbm, true);
 
   //click Evt 정렬
   $(".title").click(function(){
     var titleName = this.id;
     if(titleName == "m_no"){
       objSort(ytbm, [0]);
-      tagParsing(ytbm, false);
+      tagParsing_m(ytbm, false);
     }else if(titleName == "subj"){
       objSort(ytbm, [3]);
-      tagParsing(ytbm, false);
+      tagParsing_m(ytbm, false);
     }else if(titleName == "artst"){
       objSort(ytbm, [4]);
-      tagParsing(ytbm, false);
+      tagParsing_m(ytbm, false);
     }
   })
 }
@@ -1092,7 +1092,7 @@ function objSort(obj, sort){
   }
 }
  
-function tagParsing(obj, yminit){
+function tagParsing_m(obj, yminit){
   var len = obj.length;
   var tag = '';
   for(i=0; i<obj.length; i++){
@@ -1100,7 +1100,7 @@ function tagParsing(obj, yminit){
     +"<li class='subj mus' title='"+ i +"'>"+obj[i][3]+"</li>"
     +"<li class='artst'>"+obj[i][4]+"</li>";
   }
-  document.getElementById("data").innerHTML = tag;
+  document.getElementById("data_m").innerHTML = tag;
 };
 
    //--■■■■■■■■■■■■■■■■■해외여행사진 __ostour■■■■■■■■■■■■■■■■■■
