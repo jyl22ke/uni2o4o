@@ -622,10 +622,14 @@ function osme(){		//-- 테마별 사진모음/산행기에서 RETURN 할때
         $(".mmenu").show();
 };
 
-
-function yme(){		//-- 음악감상/시조놀이감상에서 RETURN 할때
+function yme(){		//-- 음악감상/시조놀이감상 LIST에서 mmenu로 RETURN 할때
         $(".container").show();
 	$(".container1").hide();
+};
+		
+function shrtn(){		//-- 시조놀이 개별 감상에서 LIST로 RETURN 할때
+    $('#canv').empty();
+    $(".container1").show();
 };
 
   //--■■■■■■■■■■■■■■■■■999_alplist.js■■■■■■■■■■■■■■■■■■
@@ -1168,7 +1172,7 @@ function tagParsing_s(objs, shijoinit){
 //================ 시조놀이 감상 display ==========
 	$(document).on("click", ".shi", 
 	function(){
-		$(".container2").hide();
+		$(".container1").hide();
 		sen=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입  
 		num = Number(sen);
 		$('#canv').empty();
