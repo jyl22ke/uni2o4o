@@ -156,14 +156,13 @@
 	.sh_txt{grid-column: 4/span 2;}
 	.sh_title:hover, .sh_subj:hover, button:hover{color:red;cursor:pointer}
 
-	.canvz{display:grid; grid-template-columns:1fr;grid-template-rows: minmax(250px, max-content) repeat(auto-fill, 250px) ; max-width:1100px;background:#ffe6ff;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;	border-spacing:11px;padding:1px;font-family:"arial";font-size:0.8em;}
-	.lyrs{grid-column:1/span 1;grid-row:1/span 1;text-align:center;font-weight:bold;border:1px solid red;}
-	.bkgrd{grid-column:1/span 1;grid-row:2/span 1; -webkit-mask-image: radial-gradient(ellipse 120% 80% at 200px 130px, black 37%, transparent 40%);border:1px solid red;background-position:center center;margin-top:50px;border:1px solid red;}
-	.h3s{text-align:center;}
+	.canvz{display:grid; grid-template-columns: 1fr 6fr 1fr 6fr 1fr; grid-template-rows: minmax(250px, max-content)  repeat(auto-fill, 450px); background:#ffe6ff;border:10px solid #33ccff;border-right:10px solid #3366ff;border-bottom:10px solid #3366ff;	border-spacing:11px;padding:1px;font-family:"arial";font-size:0.8em;}
+	.lyrs{grid-column:1/span 5;grid-row:1/span 1;text-align:center;font-weight:bold;}
+	.bkgrds{grid-column:1/span 5;grid-row:2/span 1; -webkit-mask-image: radial-gradient(ellipse 110% 100% at 335px 210px, black 37%, transparent 40%);background-position:center center;margin-top:20px;}	.h3s{text-align:center;}
 	.adds{text-align:right; padding:10px;}
 	.wds{margin-left: 30px;font-weight:bold; text-align:left; line-height: 180%;}
- 	@media screen and (min-width: 678px) { .canvz { grid-template-columns:7fr 8fr; font-size:0.7em;} .bkgrd{grid-column:2/span 1;grid-row:1/span 1;}} 
-	@media screen and (min-width: 950px) { .canvz { font-size:1.0em; }  .bkgrd{ -webkit-mask-image: radial-gradient(ellipse 120% 100% at 290px 190px, black 37%, transparent 40%);}}
+
+	  @media screen and (min-width: 950px) { .lyrs{grid-column:1/span 2;} .canvz {grid-template-rows: minmax(250px, max-content); } .bkgrds{grid-column:3/span 3;grid-row:1/span 1; -webkit-mask-image: radial-gradient(ellipse 110% 100% at 305px 210px, black 37%, transparent 40%);}} 
 	  
  /*------------  해외여행 사진 ---- ostour 용 css------------ */
     .contentso{display:none;min-height:940px;background:url("http://cfile284.uf.daum.net/original/99DD35415E547C4839E5D4") 100% center no-repeat fixed;color:black;width:100%;max-height:100%;}
