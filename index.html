@@ -459,7 +459,7 @@ function consamgi(){
 	var sn0 = 0; var sn1 = ""; var samgi = ""; 
 	var a1 = (cnta1 + cnta2 + cnta4) % 8; if (a1 == 0){a1 = 8};
 	var a0 = '생년 천간 ' + samsj1 + '으로부터 ' + String(a1) + '번째 천간의 내용 조회';
-	$('#output').append('■■■ 삼기배합법: ' + a0 + '----------<br>');
+	$('#output').append('■■■ 삼기배합법: ' + a0 + '---------');
 
 	samgan1 = $.map(gan, function(element, index) {
 		if (element[2] === samsj1) {
@@ -522,7 +522,7 @@ function consamoh(){
 
 		smoh = $.map(samoh, function(element, index) {
 			if (element[0] === sohn) {
-				smo = element[1] + ' __ ' + element[2] + '<br/> __ ' +  element[3];
+				smo = element[1] + ' __ ' + element[2] + ' __ ' +  element[3];
 			};
 		});
 		$('#output').append('■ 계산법('+ k +'): ' + sohn + '--');
