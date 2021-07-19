@@ -133,7 +133,7 @@ fread("samoh");
 fread("sndoh");
 fread("suri");
 fread("t64t");
-fread("ghyo384");
+fread("whng384");
 	
 function fread(fn){
     $(function (){
@@ -401,10 +401,10 @@ function conhwng(){
 	};
 	hwt = String(hwnum).slice(-4);
 	var a0 = String(a1) + String(a2);
-	var k = a3 * 2 + 1; var hyo = "";
-	ghyo = $.map(ghyo384, function(element, index) {
-		if (element[0] === a0) {
-			hyo = element[k] + ' __ ' + element[k+1];
+	var k = a3 * 3; var hyo = "";
+	ghyo = $.map(whng384, function(element, index) {
+		if (element[0].includes(a0)) {
+			hyo = element[k-2] + ' __ ' + element[k-1] + ' __ ' + element[k];
 		}
 	});
 	$('#output').append('■■■ 후천결 == 황극책수: ' + a0 + '의 ' + String(a3) + '효-----元會運世--' + hwt + '-----------');
