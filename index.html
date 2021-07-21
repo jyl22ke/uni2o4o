@@ -355,7 +355,7 @@ function con64t(){
 	var a1 = nmcn1 % 8; if (a1 == 0){a1 = 8};
 	var a2 = cnta1 % 8; if (a2 == 0){a2 = 8};
 	var a0 = String(a1) + String(a2);
-	$('#output').append('■■■ 선천결 == 팔괘법(64괘): ' + a0 + '--------------<br>');
+	$('#output').append('■■■ 선천결 == 팔괘법(64괘): ' + a0 + '----------<br>');
 	t64ta = $.map(t64t, function(element, index) {
 		if (element[0] === a0) {
 			t0 = element[0] + element[1] + element[2] + '<br>';
@@ -405,10 +405,10 @@ function conhwng(){
 	var k = a3 * 3; var hyo = "";
 	ghyo = $.map(whng384, function(element, index) {
 		if (element[0].includes(a0)) {
-			hyo = element[k-2] + ' __ ' + element[k-1] + ' __ ' + element[k];
+			hyo = element[k-2] + ') __ ' + element[k-1] + ' __ ' + element[k];
 		}
 	});
-	$('#output').append('■■■ 후천결 == 황극책수: ' + a0 + '의 ' + String(a3) + '효-----元會運世--' + hwt + '-----------');
+	$('#output').append('■■■ 후천결 == 황극책수: ' + a0 + '의 ' + String(a3) + '효-----元會運世: ' + hwt + '-----(');
 	$('#output').append(hyo + '<br>');
 };
 
@@ -422,10 +422,10 @@ function conins64t(){
 	var k1 = (parseInt(b3/2)+ b3 % 2)*2; var hyo1 = "";
 	ghyo1 = $.map(innr192, function(element, index) {
 		if (element[0] === bt1) {
-			hyo1 = element[0] + ' 의 ' + element[k1-1] + '효 __ ' + element[k1];
+			hyo1 = element[0] + '의 ' + element[k1-1] + '효) __ ' + element[k1];
 		}
 	});
-	$('#output').append('■ 내부팔괘법(초년운): ' + bt1 + '의 ' + String(b3) + '효' + '-----------');
+	$('#output').append('■ 내부팔괘법(초년운): ' + bt1 + '의 ' + String(b3) + '효' + '-----(');
 	$('#output').append(hyo1 + '<br>');
 	
 	var b4 = nmdn2 % 6; if (b4 == 0){b4 = 6};
@@ -435,10 +435,10 @@ function conins64t(){
 	var k2 = (parseInt(b6/2)+ b6 % 2)*2; var hyo2 = "";
 	ghyo2 = $.map(innr192, function(element, index) {
 		if (element[0] === bt2) {
-			hyo2 = element[0] + ' 의 ' + element[k2-1] + '효 __ ' + element[k2];
+			hyo2 = element[0] + '의 ' + element[k2-1] + '효) __ ' + element[k2];
 		}
 	});
-	$('#output').append('■ 내부팔괘법(중년운): ' + bt2 + '의 ' + String(b6) + '효' + '-----------');
+	$('#output').append('■ 내부팔괘법(중년운): ' + bt2 + '의 ' + String(b6) + '효' + '-----(');
 	$('#output').append(hyo2 + '<br>');
 
 	var b7 = cnta4 % 8; if (b7 == 0){b7 = 8};
@@ -448,10 +448,10 @@ function conins64t(){
 	var k3 = (parseInt(b9/2)+ b9 % 2)*2; var hyo3 = "";
 	ghyo3 = $.map(innr192, function(element, index) {
 		if (element[0] === bt3) {
-			hyo3 = element[0] + ' 의 ' + element[k3-1] + '효 __ ' + element[k3];
+			hyo3 = element[0] + '의 ' + element[k3-1] + '효) __ ' + element[k3];
 		}
 	});
-	$('#output').append('■ 내부팔괘법(말년운): ' + bt3 + '의 ' + String(b9) + '효' + '-----------');
+	$('#output').append('■ 내부팔괘법(말년운): ' + bt3 + '의 ' + String(b9) + '효' + '-----(');
 	$('#output').append(hyo3 + '<br>');
 };
 
@@ -460,7 +460,7 @@ function consamgi(){
 	var sn0 = 0; var sn1 = ""; var samgi = ""; 
 	var a1 = (cnta1 + cnta2 + cnta4) % 8; if (a1 == 0){a1 = 8};
 	var a0 = '생년 천간 ' + samsj1 + '으로부터 ' + String(a1) + '번째 천간의 내용 조회';
-	$('#output').append('■■■ 삼기배합법: ' + a0 + '---------');
+	$('#output').append('■■■ 삼기배합법: ' + a0 + '-----(');
 
 	samgan1 = $.map(gan, function(element, index) {
 		if (element[2] === samsj1) {
@@ -470,7 +470,7 @@ function consamgi(){
 	sn1 = String((sn0 + a1 - 1) % 10);
 	samgan2 = $.map(gan, function(element, index) {
 		if (element[0] === sn1) {
-			samgi = element[2] + ' __ ' + element[10] + ' __ ' + element[11];
+			samgi = element[2] + ') __ ' + element[10] + ' __ ' + element[11];
 		}
 	});
 	$('#output').append(samgi + '<br>');
@@ -487,7 +487,7 @@ function conjin(){
 //==================== 삼원오행 ====================
 	var sohan = ""; var sohn = ""; var soha1 = ""; var soha2 = ""; var soha3 = "";
 function consamoh(){
-	$('#output').append('■■■ 삼원오행 ----------------<br>');
+	$('#output').append('■■■ 삼원오행 ----- 계산법(1) 이,형,원---(2) (성),형,원---(3) (성1),형,원---(4) (성),(1명),(2명)-----<br>');
 	var aa = new Array; var bb = new Array; var k = "";
 		//-----계산법(1)---
 	a1 = String(cnta3 % 10);	
