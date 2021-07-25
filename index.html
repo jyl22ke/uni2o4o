@@ -135,6 +135,8 @@ fread("suri");
 fread("t64t");
 fread("whng384");
 fread("innr192");
+fread("gogh88");
+fread("psyr");
 	
 function fread(fn){
     $(function (){
@@ -253,14 +255,15 @@ $( function() {
 		conhwng();
 		consamgi();
 		consamoh();
+		gogh();
 		conins64t();
 		conjin();
 	} );
 } );
 
 var sgan = new Array;
-var sjk = ""; var sju = ""; var sjpm = ""; var sjupm = ""; var sjut = ""; 
-var sjuh = ""; var saju = ""; var name = ""; var samsj1 = "";
+var sjk = ""; var sju = ""; var sjpm = ""; var sjupm = ""; var sjut = ""; var goghtxt = "";
+var sjuh = ""; var saju = ""; var name = ""; var samsj1 = ""; var sjyr = ""; var sjyrn = 0;
 
 function printSaju(){
     saju = document.getElementById('sj').value;
@@ -300,6 +303,9 @@ function printSaju(){
 				b = element[6];
 			};
 		});
+		if (n==2){
+			sjyr = samsj1 + sjuh;
+		};
 		document.getElementById(sjk).innerText =  sjuh;
 		document.getElementById(sjpm).innerText =  sjupm;
 		chg_bgcolor(a,b);
@@ -412,6 +418,22 @@ function conhwng(){
 	$('#output').append(hyo + '<br>');
 };
 
+//=========== 곡획풀이 (선천생수+필획+곡획) ===========
+function gogh(){	
+	psyra = $.map(psyr, function(element, index) {
+		if (element[0] === sjyr) {
+			sjyrn = Number(element[1]);
+		}
+	});
+	gggn = String(sjyrn + cnta4 + cntb4);
+	gogha = $.map(gogh88, function(element, index) {
+		if (element[0] === gggn) {
+			goghtxt = element[0] + '괘상-- ' + element[1] + '<br/>' + element[2] + '<br/>' + element[3] + '<br/>' + element[4] + '<br/>' + element[5] +  '<br/>';
+		}
+	});
+	$('#output').append('■■■ 곡획풀이 (선천생수+필획+곡획): ' + goghtxt);
+};
+	
 //==================== 내부팔괘법 ====================
 function conins64t(){
 	$('#output').append('□□□ 내부팔괘법 ----------------<br>');
