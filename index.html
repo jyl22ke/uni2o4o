@@ -34,10 +34,7 @@
 	.nm {grid-column: span 4;grid-row: span 1; color: #000; font-weight: bold;border:1px solid black;height:70px;font-size:4.0em; font-family:"한양해서";}
 	.nmat {grid-column: span 3;grid-row: span 1; color: #000;border:1px solid black;height:30px; font-size: 0.9em;}
 	.nma {grid-column: span 4;grid-row: span 1; color: #000; font-weight: bold;border:1px solid black;height:30px;}
-	.nma0 {grid-column: span 4;grid-row: span 1; color: #000; font-weight: bold;border:1px solid black;height:30px;}
-	.nma1 {grid-column: span 8;grid-row: span 1; color: #000; font-weight: bold;border:1px solid black;height:30px;}
-	.nma2 {grid-column: span 12;grid-row: span 1; color: #000; font-weight: bold;border:1px solid black;height:30px;}
-	.nmx {grid-column: span 4;grid-row: span 1; background: #999; font-weight: bold;border:1px solid black;height:30px;}
+	.nma1 {grid-column: span 3;grid-row: span 1; color: #000; font-weight: bold;border:1px solid black;height:30px;}
 	#output {width:100%; min-height: 790px; color: #000; padding:10px;border:1px solid black;text-align:left; font-size: 0.8em;}
 	#submit1 {padding: 0 10px; font-weight: bold;}
 	#clear1 {padding: 0 5px;}
@@ -50,8 +47,7 @@
 <div class="container">
 	<div id="dvCSV"></div>    
 
-<p class="ifo"> 사주: <input type="text" id="sj" maxlength="8" onchange='printSaju()'/>  성명: (한자) <input type="text" id="nm" size="10" onchange='printName()'/> (한글) <input type="text" id="nm0" size="10"> &nbsp; &nbsp;<button id="clear1">지우기</button> &nbsp; &nbsp;<button id="submit1">제 출</button></p> 
-<p class="ifo"> (획수는 3개를 ","로 구분) &nbsp; (획수) <input type="text" id="nma"> (곡획) <input type="text" id="nmb"> &nbsp; 음령오행: <input type="text" id="sjs"> </p> 
+<p class="ifo"> 사주: <input type="text" id="sj" maxlength="8" onchange='printSaju()'/>  성명: (한자) <input type="text" id="nm" size="10" onchange='printName()'/> 지우기</button> &nbsp; &nbsp;<button id="submit1">제 출</button></p> 
 
 <hr/>
 	<div class="canvas">
@@ -96,34 +92,20 @@
 		<div class="nma" id="nmc1"></div>
 		<div class="nma" id="nmc2"></div>
 		<div class="nma" id="nmc3"></div>
-		<div class="nmat">원(원획)</div>
-		<div class="nmx"></div>
+		<div class="nmat">원형이정</div>
 		<div class="nma1" id="cnta1"></div>
-		<div class="nmat">형(원획)</div>
 		<div class="nma1" id="cnta2"></div>
-		<div class="nmx"></div>
-		<div class="nmat">이(원획)</div>
-		<div class="nma0" id="cnta3"></div>
-		<div class="nmx"></div>
-		<div class="nma0"></div>
-		<div class="nmat">정(원획)</div>
-		<div class="nma2" id="cnta4"></div>
+		<div class="nma1" id="cnta3"></div>
+		<div class="nma1" id="cnta4"></div>
 		<div class="nmat">곡획</div>
 		<div class="nma" id="nmd1"></div>
 		<div class="nma" id="nmd2"></div>
 		<div class="nma" id="nmd3"></div>
-		<div class="nmat">원(곡획)</div>
-		<div class="nmx"></div>
+		<div class="nmat">원형이정(곡)</div>
 		<div class="nma1" id="cntb1"></div>
-		<div class="nmat">형(곡획)</div>
 		<div class="nma1" id="cntb2"></div>
-		<div class="nmx"></div>
-		<div class="nmat">이(곡획)</div>
-		<div class="nma0" id="cntb3"></div>
-		<div class="nmx"></div>
-		<div class="nma0"></div>
-		<div class="nmat">정(곡획)</div>
-		<div class="nma2" id="cntb4"></div>
+		<div class="nma1" id="cntb3"></div>
+		<div class="nma1" id="cntb4"></div>
 
 	</div>
 		<div id="output"></div>
@@ -213,6 +195,7 @@ $( function() {
 		haa = $.map(hanja1, function(element, index) {
 			if (element[1] === han1) {
 				cnt_org1 = element[6];
+				cnt_wr1 = element[7];
 				cnt_gog1 = element[8];
 				sjs1 = element[9];
 				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org1 + ' __ 곡획: ' + cnt_gog1 + ' __ 음령오행: ' + sjs1 + ' __ 자원오행: ' + element[10] + ' ' + element[4] + ' __ ' + element[5] + '<br>';
@@ -222,6 +205,7 @@ $( function() {
 		hab = $.map(hanja1, function(element, index) {
 			if (element[1] === han2) {
 				cnt_org2 = element[6];
+				cnt_wr2 = element[7];
 				cnt_gog2 = element[8];
 				sjs2 = element[9];
 				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org2 + ' __ 곡획: ' + cnt_gog2 + ' __ 음령오행: ' + sjs2 + ' __ 자원오행: ' + element[10] + ' ' + element[4] + ' __ ' + element[5] + '<br>';
@@ -231,6 +215,7 @@ $( function() {
 		hac = $.map(hanja1, function(element, index) {
 			if (element[1] === han3) {
 				cnt_org3 = element[6];
+				cnt_wr3 = element[7];
 				cnt_gog3 = element[8];
 				sjs3 = element[9];
 				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org3 + ' __ 곡획: ' + cnt_gog3 + ' __ 음령오행: ' + sjs3 + ' __ 자원오행: ' + element[10] + ' ' + element[4] + ' __ ' + element[5] + '<br>';
