@@ -173,6 +173,11 @@ function fread(fn){
 </script>
 
 <script type="text/javascript">
+var sgan = new Array;
+var sjk = ""; var sju = ""; var sjpm = ""; var sjupm = ""; var sjut = ""; var goghtxt = "";
+var sjuh = ""; var saju = ""; var name = ""; var samsj1 = ""; var sjyr = ""; var sjyrn = 0;
+var han1 = ""; var han2 = ""; var han3 = ""; var cnt_org1 = ""; var cnt_org2 = ""; var cnt_org3 = "";
+var cnt_gog1 = ""; var cnt_gog2 = ""; var cnt_gog3 = "";
 
 $( function() {
 	$( 'button#clear1' ).click( function() {
@@ -206,7 +211,7 @@ $( function() {
 		$('#output').append(' &nbsp; 성명: ' + name + ' &nbsp; 사주: ' + saju + '<br>');
 		
 		for (k=1; k<4; k++){
-			hann = "han" + k; c_orgn = "cnt_org" + k; c_gogn = "cnt_gog" + k;
+			var hann = "han" + k; var c_orgn = "cnt_org" + k; var c_gogn = "cnt_gog" + k;
 			han = $.map(hanja1, function(element, index) {
 				if (element[1] === hann) {
 					c_orgn = element[6];
@@ -285,11 +290,6 @@ $( function() {
 		conjin();
 	} );
 } );
-
-var sgan = new Array;
-var sjk = ""; var sju = ""; var sjpm = ""; var sjupm = ""; var sjut = ""; var goghtxt = "";
-var sjuh = ""; var saju = ""; var name = ""; var samsj1 = ""; var sjyr = ""; var sjyrn = 0;
-var han1 = ""; var han2 = ""; var han3 = ""; 	
 
 function printSaju(){
     saju = document.getElementById('sj').value;
