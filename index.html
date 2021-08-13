@@ -141,6 +141,7 @@ fread("whng384");
 fread("innr192");
 fread("gogh88");
 fread("psyr");
+fread("hanja_list_m");
 	
 function fread(fn){
     $(function (){
@@ -202,7 +203,19 @@ function chkOdd(num) { return (num % 2)? "양":"음"; }
 $( function() {
 	$( 'button#submit1' ).click( function() {
 		$('#output').empty();
-		$('#output').append(' &nbsp; 성명: ' + name + ' &nbsp; 사주: ' + saju + ' &nbsp; 음령오행: ' + $('input#sjs').val() + ' &nbsp; 획수: ' + $('input#nma').val() + ' &nbsp; 곡획: ' + $('input#nmb').val() + '<br>');
+		$('#output').append(' &nbsp; 성명: ' + name + ' &nbsp; 사주: ' + saju + '<br>');
+		
+		for (k=1; k<4; k++){
+			hann = "han" + k; c_orgn = "cnt_org" + k; c_gogn = "cnt_gog" + k;
+			han = $.map(hanja_list_m, function(element, index) {
+				if (element[1] === hann) {
+					c_orgn = element[6];
+					c_gogn = element[8];
+					var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org1 + ' __ 곡획: ' + cnt_gog1 + ' __ 음령오행: ' + element[9] + ' __ 자원오행: ' + element[10] + '<br>' + element[4] + ' __ ' + element[5] + '<br>';
+					$('#output').append(hantx);
+				};
+			});
+		};
 
 		var sjsn = $('input#sjs').val();
 		var sndh = ""; var sndt = "";
@@ -213,14 +226,22 @@ $( function() {
 			};
 		});
 
-		var nmcn = $('input#nma').val().split(',');
-		var nmdn = $('input#nmb').val().split(',');
-		nmcn1 = Number(nmcn[0]);
-		nmcn2 = Number(nmcn[1]);
-		nmcn3 = Number(nmcn[2]);
-		nmdn1 = Number(nmdn[0]);
-		nmdn2 = Number(nmdn[1]);
-		nmdn3 = Number(nmdn[2]);
+//		var nmcn = $('input#nma').val().split(',');
+//		var nmdn = $('input#nmb').val().split(',');
+//		nmcn1 = Number(nmcn[0]);
+//		nmcn2 = Number(nmcn[1]);
+//		nmcn3 = Number(nmcn[2]);
+//		nmdn1 = Number(nmdn[0]);
+//		nmdn2 = Number(nmdn[1]);
+//		nmdn3 = Number(nmdn[2]);
+		
+		nmcn1 = Number(cnt_org1);
+		nmcn2 = Number(cnt_org2);
+		nmcn3 = Number(cnt_org3);
+		nmdn1 = Number(cnt_gog1);
+		nmdn2 = Number(cnt_gog2);
+		nmdn3 = Number(cnt_gog3);
+		
 
 		cnta1 = nmcn2 + nmcn3;
 		cnta2 = nmcn1 + nmcn2;
@@ -268,6 +289,7 @@ $( function() {
 var sgan = new Array;
 var sjk = ""; var sju = ""; var sjpm = ""; var sjupm = ""; var sjut = ""; var goghtxt = "";
 var sjuh = ""; var saju = ""; var name = ""; var samsj1 = ""; var sjyr = ""; var sjyrn = 0;
+var han1 = ""; var han2 = ""; var han3 = ""; 	
 
 function printSaju(){
     saju = document.getElementById('sj').value;
@@ -318,9 +340,13 @@ function printSaju(){
 
 function printName()  {
   name = document.getElementById('nm').value;
-  document.getElementById("nm1").innerText =  name.substring(0,1);
-  document.getElementById("nm2").innerText =  name.substring(1,2);
-  document.getElementById("nm3").innerText =  name.substring(2,3);
+  han1 = name.substring(0,1);
+  han2 = name.substring(1,2);
+  han3 = name.substring(2,3);
+	
+  document.getElementById("nm1").innerText =  han1;
+  document.getElementById("nm2").innerText =  han2;
+  document.getElementById("nm3").innerText =  han3;
 }
 
 //====================수리법(원형이정)====================
