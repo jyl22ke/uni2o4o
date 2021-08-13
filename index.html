@@ -177,7 +177,7 @@ var sgan = new Array;
 var sjk = ""; var sju = ""; var sjpm = ""; var sjupm = ""; var sjut = ""; var goghtxt = "";
 var sjuh = ""; var saju = ""; var name = ""; var samsj1 = ""; var sjyr = ""; var sjyrn = 0;
 var han1 = ""; var han2 = ""; var han3 = ""; var cnt_org1 = ""; var cnt_org2 = ""; var cnt_org3 = "";
-var cnt_gog1 = ""; var cnt_gog2 = ""; var cnt_gog3 = "";
+var cnt_gog1 = ""; var cnt_gog2 = ""; var cnt_gog3 = ""; 
 
 $( function() {
 	$( 'button#clear1' ).click( function() {
@@ -210,17 +210,30 @@ $( function() {
 		$('#output').empty();
 		$('#output').append(' &nbsp; 성명: ' + name + ' &nbsp; 사주: ' + saju + '<br>');
 		
-		for (k=1; k<4; k++){
-			var hann = "han" + k; var c_orgn = "cnt_org" + k; var c_gogn = "cnt_gog" + k;
-			han = $.map(hanja1, function(element, index) {
-				if (element[1] === hann) {
-					c_orgn = element[6];
-					c_gogn = element[8];
-					var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org1 + ' __ 곡획: ' + cnt_gog1 + ' __ 음령오행: ' + element[9] + ' __ 자원오행: ' + element[10] + '<br>' + element[4] + ' __ ' + element[5] + '<br>';
-					$('#output').append(hantx);
-				};
-			});
-		};
+		haa = $.map(hanja1, function(element, index) {
+			if (element[1] === han1) {
+				cnt_org1 = element[6];
+				cnt_gog1 = element[8];
+				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org1 + ' __ 곡획: ' + cnt_gog1 + ' __ 음령오행: ' + element[9] + ' __ 자원오행: ' + element[10] + '<br>' + element[4] + ' __ ' + element[5] + '<br>';
+				$('#output').append(hantx);
+			};
+		});
+		hab = $.map(hanja1, function(element, index) {
+			if (element[1] === han2) {
+				cnt_org2 = element[6];
+				cnt_gog2 = element[8];
+				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org2 + ' __ 곡획: ' + cnt_gog2 + ' __ 음령오행: ' + element[9] + ' __ 자원오행: ' + element[10] + '<br>' + element[4] + ' __ ' + element[5] + '<br>';
+				$('#output').append(hantx);
+			};
+		});
+		hac = $.map(hanja1, function(element, index) {
+			if (element[1] === han3) {
+				cnt_org3 = element[6];
+				cnt_gog3 = element[8];
+				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org3 + ' __ 곡획: ' + cnt_gog3 + ' __ 음령오행: ' + element[9] + ' __ 자원오행: ' + element[10] + '<br>' + element[4] + ' __ ' + element[5] + '<br>';
+				$('#output').append(hantx);
+			};
+		});
 
 		var sjsn = $('input#sjs').val();
 		var sndh = ""; var sndt = "";
@@ -246,7 +259,6 @@ $( function() {
 		nmdn1 = Number(cnt_gog1);
 		nmdn2 = Number(cnt_gog2);
 		nmdn3 = Number(cnt_gog3);
-		
 
 		cnta1 = nmcn2 + nmcn3;
 		cnta2 = nmcn1 + nmcn2;
