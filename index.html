@@ -141,7 +141,7 @@ fread("whng384");
 fread("innr192");
 fread("gogh88");
 fread("psyr");
-fread("hanja");
+fread("hanja1");
 	
 function fread(fn){
     $(function (){
@@ -207,7 +207,7 @@ $( function() {
 		
 		for (k=1; k<4; k++){
 			hann = "han" + k; c_orgn = "cnt_org" + k; c_gogn = "cnt_gog" + k;
-			han = $.map(hanja, function(element, index) {
+			han = $.map(hanja1, function(element, index) {
 				if (element[1] === hann) {
 					c_orgn = element[6];
 					c_gogn = element[8];
