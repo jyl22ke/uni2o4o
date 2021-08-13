@@ -232,15 +232,6 @@ $( function() {
 			};
 		});
 
-//		var nmcn = $('input#nma').val().split(',');
-//		var nmdn = $('input#nmb').val().split(',');
-//		nmcn1 = Number(nmcn[0]);
-//		nmcn2 = Number(nmcn[1]);
-//		nmcn3 = Number(nmcn[2]);
-//		nmdn1 = Number(nmdn[0]);
-//		nmdn2 = Number(nmdn[1]);
-//		nmdn3 = Number(nmdn[2]);
-		
 		nmcn1 = Number(cnt_org1);
 		nmcn2 = Number(cnt_org2);
 		nmcn3 = Number(cnt_org3);
@@ -277,7 +268,10 @@ $( function() {
 		document.getElementById('cntb2').innerText =  cntb2;
 		document.getElementById('cntb3').innerText =  cntb3;
 		document.getElementById('cntb4').innerText =  cntb4;
-
+		document.getElementById('nmw1').innerText =  cnt_wr1;
+		document.getElementById('nmw2').innerText =  cnt_wr2;
+		document.getElementById('nmw3').innerText =  cnt_wr3;
+		
 		$('#output').append('■■■ 음령오행 ----------------<br>');
 		$('#output').append(sndt + '<br>');
 		consuri();
@@ -512,7 +506,7 @@ function consamgi(){
 	var sn0 = 0; var sn1 = ""; var samgi = ""; 
 	var a1 = (cnta1 + cnta2 + cnta4) % 8; if (a1 == 0){a1 = 8};
 	var a0 = '생년 천간 ' + samsj1 + '으로부터 ' + String(a1) + '번째 천간의 내용 조회';
-	$('#output').append('■■■ 삼기배합법..(원형이)%8 : ' + a0 + '-----(');
+	$('#output').append('■■■ 삼기배합법..(원형정)%8 : ' + a0 + '-----(');
 
 	samgan1 = $.map(gan, function(element, index) {
 		if (element[2] === samsj1) {
