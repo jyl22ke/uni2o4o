@@ -177,7 +177,7 @@ var sgan = new Array;
 var sjk = ""; var sju = ""; var sjpm = ""; var sjupm = ""; var sjut = ""; var goghtxt = "";
 var sjuh = ""; var saju = ""; var name = ""; var samsj1 = ""; var sjyr = ""; var sjyrn = 0;
 var han1 = ""; var han2 = ""; var han3 = ""; var cnt_org1 = ""; var cnt_org2 = ""; var cnt_org3 = "";
-var cnt_gog1 = ""; var cnt_gog2 = ""; var cnt_gog3 = ""; 
+var cnt_gog1 = ""; var cnt_gog2 = ""; var cnt_gog3 = ""; var sjs1 = ""; var sjs2 = ""; var sjs3 = "";
 
 $( function() {
 	$( 'button#clear1' ).click( function() {
@@ -214,7 +214,8 @@ $( function() {
 			if (element[1] === han1) {
 				cnt_org1 = element[6];
 				cnt_gog1 = element[8];
-				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org1 + ' __ 곡획: ' + cnt_gog1 + ' __ 음령오행: ' + element[9] + ' __ 자원오행: ' + element[10] + '<br>' + element[4] + ' __ ' + element[5] + '<br>';
+				sjs1 = element[9];
+				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org1 + ' __ 곡획: ' + cnt_gog1 + ' __ 음령오행: ' + sjs1 + ' __ 자원오행: ' + element[10] + ' ' + element[4] + ' __ ' + element[5] + '<br>';
 				$('#output').append(hantx);
 			};
 		});
@@ -222,7 +223,8 @@ $( function() {
 			if (element[1] === han2) {
 				cnt_org2 = element[6];
 				cnt_gog2 = element[8];
-				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org2 + ' __ 곡획: ' + cnt_gog2 + ' __ 음령오행: ' + element[9] + ' __ 자원오행: ' + element[10] + '<br>' + element[4] + ' __ ' + element[5] + '<br>';
+				sjs2 = element[9];
+				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org2 + ' __ 곡획: ' + cnt_gog2 + ' __ 음령오행: ' + sjs2 + ' __ 자원오행: ' + element[10] + ' ' + element[4] + ' __ ' + element[5] + '<br>';
 				$('#output').append(hantx);
 			};
 		});
@@ -230,12 +232,13 @@ $( function() {
 			if (element[1] === han3) {
 				cnt_org3 = element[6];
 				cnt_gog3 = element[8];
-				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org3 + ' __ 곡획: ' + cnt_gog3 + ' __ 음령오행: ' + element[9] + ' __ 자원오행: ' + element[10] + '<br>' + element[4] + ' __ ' + element[5] + '<br>';
+				sjs3 = element[9];
+				var hantx = element[1] + '(' + element[2] + ') __' + element[3] + ' __ 원획: ' + cnt_org3 + ' __ 곡획: ' + cnt_gog3 + ' __ 음령오행: ' + sjs3 + ' __ 자원오행: ' + element[10] + ' ' + element[4] + ' __ ' + element[5] + '<br>';
 				$('#output').append(hantx);
 			};
 		});
 
-		var sjsn = $('input#sjs').val();
+		var sjsn = sjs1 + sjs2 + sjs3;
 		var sndh = ""; var sndt = "";
 		sndo = $.map(sndoh, function(element, index) {
 			if (element[0] === sjsn) {
