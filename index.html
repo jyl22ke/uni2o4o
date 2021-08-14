@@ -248,6 +248,7 @@ $( function() {
 		cntb2 = nmdn1 + nmdn2;
 		cntb3 = nmdn1 + nmdn3;
 		cntb4 = nmdn1 + nmdn2 + nmdn3;
+		cntw4 = cnt_wr1 + cnt_wr2 + cnt_wr3;
 
 		document.getElementById('nms1').innerText =  sndh.substring(0,1);
 		document.getElementById('nms2').innerText =  sndh.substring(1,2);
@@ -450,7 +451,7 @@ function gogh(){
 			sjyrn = Number(element[1]);
 		}
 	});
-	gggn = String(sjyrn + cnta4 + cntb4);
+	gggn = String(sjyrn + cntw4 + cntb4);
 	gogha = $.map(gogh88, function(element, index) {
 		if (element[0] === gggn) {
 			goghtxt = element[0] + '괘상-- ' + element[1] + '<br/>' + element[2] + '<br/>' + element[3] + '<br/>' + element[4] + '<br/>' + element[5] +  '<br/>';
